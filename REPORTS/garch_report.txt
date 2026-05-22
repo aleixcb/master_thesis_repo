@@ -1,5 +1,5 @@
 ==============================================================================
-REMX volatility-model estimation report  (generated 2026-05-22 22:48)
+REMX volatility-model estimation report  (generated 2026-05-23 00:06)
 ==============================================================================
 
 ------------------------------------------------------------------------------
@@ -13,8 +13,8 @@ Vol Model:                      GARCH   Log-Likelihood:               -5982.26
 Distribution:                  Normal   AIC:                           11972.5
 Method:            Maximum Likelihood   BIC:                           11996.2
                                         No. Observations:                 2765
-Date:                Fri, May 22 2026   Df Residuals:                     2764
-Time:                        22:42:47   Df Model:                            1
+Date:                Sat, May 23 2026   Df Residuals:                     2764
+Time:                        00:05:54   Df Model:                            1
                                   Mean Model                                  
 ==============================================================================
                   coef    std err          t      P>|t|       95.0% Conf. Int.
