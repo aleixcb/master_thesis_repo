@@ -1,0 +1,27 @@
+Sample after alignment: T = 2765 obs (2015-04-02 -> 2026-03-31)
+
+Per-parameter significance (|t| > 1.645 -> 10%, |t| > 1.96 -> 5%, |t| > 2.576 -> 1%):
+            estimate  std_err   t_ratio  p_value  significant_10pct  significant_5pct  significant_1pct
+mu           -0.0219   0.0365   -0.6002   0.5484              False             False             False
+omega         0.1382   0.0486    2.8447   0.0044               True              True              True
+alpha         0.1745   0.0295    5.9178   0.0000               True              True              True
+xi           -0.0279   0.0152   -1.8281   0.0675               True             False             False
+beta          0.9727   0.0085  114.6132   0.0000               True              True              True
+gamma_tone    0.0077   0.0063    1.2255   0.2204              False             False             False
+gamma_vol    -0.0212   0.0090   -2.3454   0.0190               True              True             False
+
+Log-likelihood : -5972.9063
+AIC            :  11959.8125
+BIC            :  12001.2861
+
+beta = 0.9727   (stationary (|beta|<1))
+Half-life of a log-variance shock: 25.0 trading days
+
+Verdict:
+  mu            t = -0.60   p = 0.5484   -> not significant
+  omega         t = +2.84   p = 0.0044   -> SIGNIFICANT at 1% (and 5%, 10%)
+  alpha         t = +5.92   p = 0.0000   -> SIGNIFICANT at 1% (and 5%, 10%)
+  xi            t = -1.83   p = 0.0675   -> SIGNIFICANT at 10% only
+  beta          t = +114.61   p = 0.0000   -> SIGNIFICANT at 1% (and 5%, 10%)
+  gamma_tone    t = +1.23   p = 0.2204   -> not significant
+  gamma_vol     t = -2.35   p = 0.0190   -> SIGNIFICANT at 5% (and 10%) only

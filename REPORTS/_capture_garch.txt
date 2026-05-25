@@ -1,0 +1,44 @@
+                     Constant Mean - GARCH Model Results                      
+==============================================================================
+Dep. Variable:                      r   R-squared:                       0.000
+Mean Model:             Constant Mean   Adj. R-squared:                  0.000
+Vol Model:                      GARCH   Log-Likelihood:               -5982.26
+Distribution:                  Normal   AIC:                           11972.5
+Method:            Maximum Likelihood   BIC:                           11996.2
+                                        No. Observations:                 2765
+Date:                Mon, May 25 2026   Df Residuals:                     2764
+Time:                        20:09:31   Df Model:                            1
+                                  Mean Model                                  
+==============================================================================
+                  coef    std err          t      P>|t|       95.0% Conf. Int.
+------------------------------------------------------------------------------
+mu         -6.2207e-03  3.705e-02     -0.168      0.867 [-7.883e-02,6.639e-02]
+                             Volatility Model                             
+==========================================================================
+                 coef    std err          t      P>|t|    95.0% Conf. Int.
+--------------------------------------------------------------------------
+omega          0.0857  3.007e-02      2.850  4.378e-03 [2.675e-02,  0.145]
+alpha[1]       0.0892  1.610e-02      5.542  2.997e-08 [5.766e-02,  0.121]
+beta[1]        0.8975  1.827e-02     49.135      0.000   [  0.862,  0.933]
+==========================================================================
+
+Covariance estimator: robust
+
+Per-parameter significance (|t| > 1.645 -> 10%, |t| > 1.96 -> 5%, |t| > 2.576 -> 1%):
+          estimate  std_err  t_ratio  p_value  significant_10pct  significant_5pct  significant_1pct
+mu         -0.0062   0.0370  -0.1679   0.8666              False             False             False
+omega       0.0857   0.0301   2.8495   0.0044               True              True              True
+alpha[1]    0.0892   0.0161   5.5416   0.0000               True              True              True
+beta[1]     0.8975   0.0183  49.1353   0.0000               True              True              True
+
+Log-likelihood : -5982.2557
+AIC            :  11972.5114
+BIC            :  11996.2106
+
+alpha[1] + beta[1] = 0.9867   (stationary (<1))
+
+Verdict:
+  mu          t = -0.17   p = 0.8666   -> not significant
+  omega       t = +2.85   p = 0.0044   -> SIGNIFICANT at 1% (and 5%, 10%)
+  alpha[1]    t = +5.54   p = 0.0000   -> SIGNIFICANT at 1% (and 5%, 10%)
+  beta[1]     t = +49.14   p = 0.0000   -> SIGNIFICANT at 1% (and 5%, 10%)
