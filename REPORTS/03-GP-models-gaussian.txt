@@ -10,7 +10,7 @@ Distribution:                  Normal   AIC:                           11972.5
 Method:            Maximum Likelihood   BIC:                           11996.2
                                         No. Observations:                 2765
 Date:                Tue, May 26 2026   Df Residuals:                     2764
-Time:                        16:36:30   Df Model:                            1
+Time:                        22:00:13   Df Model:                            1
                                   Mean Model                                  
 ==============================================================================
                   coef    std err          t      P>|t|       95.0% Conf. Int.
