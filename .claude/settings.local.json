@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(/Users/aleix/Documents/Repos/master_thesis_repo/.venv/bin/python -c ' *)"
+    ]
+  }
+}
