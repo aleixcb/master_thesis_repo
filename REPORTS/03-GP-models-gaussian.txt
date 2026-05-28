@@ -9,13 +9,13 @@ Vol Model:                      GARCH   Log-Likelihood:               -5982.26
 Distribution:                  Normal   AIC:                           11972.5
 Method:            Maximum Likelihood   BIC:                           11996.2
                                         No. Observations:                 2765
-Date:                Tue, May 26 2026   Df Residuals:                     2764
-Time:                        22:00:13   Df Model:                            1
-                                  Mean Model                                  
-==============================================================================
-                  coef    std err          t      P>|t|       95.0% Conf. Int.
-------------------------------------------------------------------------------
-mu         -6.2207e-03  3.705e-02     -0.168      0.867 [-7.883e-02,6.639e-02]
+Date:                Thu, May 28 2026   Df Residuals:                     2764
+Time:                        11:29:44   Df Model:                            1
+                                  Mean Model                                 
+=============================================================================
+                 coef    std err          t      P>|t|       95.0% Conf. Int.
+-----------------------------------------------------------------------------
+mu            -0.0117  3.705e-02     -0.317      0.752 [-8.434e-02,6.088e-02]
                              Volatility Model                             
 ==========================================================================
                  coef    std err          t      P>|t|    95.0% Conf. Int.
@@ -29,10 +29,10 @@ Covariance estimator: robust
 
 Per-parameter significance (|t| > 1.645 -> 10%, |t| > 1.96 -> 5%, |t| > 2.576 -> 1%):
           estimate  std_err  t_ratio  p_value  significant_10pct  significant_5pct  significant_1pct
-mu         -0.0062   0.0370  -0.1679   0.8666              False             False             False
+mu         -0.0117   0.0370  -0.3166   0.7516              False             False             False
 omega       0.0857   0.0301   2.8495   0.0044               True              True              True
 alpha[1]    0.0892   0.0161   5.5416   0.0000               True              True              True
-beta[1]     0.8975   0.0183  49.1353   0.0000               True              True              True
+beta[1]     0.8975   0.0183  49.1355   0.0000               True              True              True
 
 Log-likelihood : -5982.2557
 AIC            :  11972.5114
@@ -41,7 +41,7 @@ BIC            :  11996.2106
 alpha[1] + beta[1] = 0.9867   (stationary (<1))
 
 Verdict:
-  mu          t = -0.17   p = 0.8666   -> not significant
+  mu          t = -0.32   p = 0.7516   -> not significant
   omega       t = +2.85   p = 0.0044   -> SIGNIFICANT at 1% (and 5%, 10%)
   alpha[1]    t = +5.54   p = 0.0000   -> SIGNIFICANT at 1% (and 5%, 10%)
   beta[1]     t = +49.14   p = 0.0000   -> SIGNIFICANT at 1% (and 5%, 10%)
@@ -56,7 +56,7 @@ Per-parameter significance (|t| > 1.645 -> 10%, |t| > 1.96 -> 5%, |t| > 2.576 ->
        estimate  std_err  t_ratio  p_value  significant_10pct  significant_5pct  significant_1pct
 omega    0.0902   0.0482   1.8712   0.0613               True             False             False
 alpha    0.0902   0.0159   5.6679   0.0000               True              True              True
-beta     0.8961   0.0181  49.5953   0.0000               True              True              True
+beta     0.8961   0.0181  49.5954   0.0000               True              True              True
 gamma   -0.0019   0.0227  -0.0842   0.9329              False             False             False
 
 Log-likelihood : -5982.4934
@@ -80,8 +80,8 @@ Per-parameter significance (|t| > 1.645 -> 10%, |t| > 1.96 -> 5%, |t| > 2.576 ->
        estimate  std_err  t_ratio  p_value  significant_10pct  significant_5pct  significant_1pct
 omega    0.0919   0.0304   3.0270   0.0025               True              True              True
 alpha    0.0901   0.0155   5.8108   0.0000               True              True              True
-beta     0.8955   0.0176  50.7544   0.0000               True              True              True
-gamma   -0.0007   0.0002  -4.2548   0.0000               True              True              True
+beta     0.8955   0.0176  50.7546   0.0000               True              True              True
+gamma   -0.0007   0.0002  -4.2539   0.0000               True              True              True
 
 Log-likelihood : -5980.9476
 AIC            :  11969.8952
@@ -102,11 +102,11 @@ Sample after alignment: T = 2765 obs (2015-04-02 -> 2026-03-31)
 
 Per-parameter significance (|t| > 1.645 -> 10%, |t| > 1.96 -> 5%, |t| > 2.576 -> 1%):
        estimate  std_err  t_ratio  p_value  significant_10pct  significant_5pct  significant_1pct
-omega    0.0959   0.0903   1.0617   0.2884              False             False             False
+omega    0.0959   0.0903   1.0618   0.2883              False             False             False
 alpha    0.0900   0.0162   5.5712   0.0000               True              True              True
-beta     0.8959   0.0191  47.0074   0.0000               True              True              True
+beta     0.8959   0.0191  47.0087   0.0000               True              True              True
 gamma   -0.0037   0.0185  -0.2017   0.8402              False             False             False
-theta    0.4984   6.6265   0.0752   0.9400              False             False             False
+theta    0.4984   6.6260   0.0752   0.9400              False             False             False
 
 Log-likelihood : -5982.3901
 AIC            :  11974.7801
@@ -115,7 +115,7 @@ alpha + beta   :  0.9859   (stationary (<1))
 Fraction of days with tone_{t-1} < 0 (d1 = 1): 0.481
 
 Verdict:
-  omega         t = +1.06   p = 0.2884   -> not significant
+  omega         t = +1.06   p = 0.2883   -> not significant
   alpha         t = +5.57   p = 0.0000   -> SIGNIFICANT at 1% (and 5%, 10%)
   beta          t = +47.01   p = 0.0000   -> SIGNIFICANT at 1% (and 5%, 10%)
   gamma         t = -0.20   p = 0.8402   -> not significant
@@ -180,9 +180,9 @@ Sample: T = 2765 obs (2015-04-02 -> 2026-03-31)  kappa = 9.9206
 
 Per-parameter significance (|t| > 1.645 -> 10%, |t| > 1.96 -> 5%, |t| > 2.576 -> 1%):
        estimate  std_err   t_ratio  p_value  significant_10pct  significant_5pct  significant_1pct
-omega    0.0622   0.0135    4.6004   0.0000               True              True              True
+omega    0.0622   0.0135    4.6005   0.0000               True              True              True
 alpha    0.0885   0.0079   11.2061   0.0000               True              True              True
-beta     0.9060   0.0059  153.6288   0.0000               True              True              True
+beta     0.9060   0.0059  153.6289   0.0000               True              True              True
 gamma   -0.2887   0.0698   -4.1373   0.0000               True              True              True
 
 Log-likelihood : -5979.9431
@@ -204,7 +204,7 @@ Per-parameter significance (|t| > 1.645 -> 10%, |t| > 1.96 -> 5%, |t| > 2.576 ->
        estimate  std_err  t_ratio  p_value  significant_10pct  significant_5pct  significant_1pct
 omega    0.1010   0.0316   3.1953   0.0014               True              True              True
 alpha    0.0942   0.0153   6.1488   0.0000               True              True              True
-beta     0.8862   0.0189  46.8293   0.0000               True              True              True
+beta     0.8862   0.0189  46.8291   0.0000               True              True              True
 gamma    0.1123   0.0901   1.2456   0.2129              False             False             False
 
 Log-likelihood : -5981.8144
@@ -226,7 +226,7 @@ Per-parameter significance (|t| > 1.645 -> 10%, |t| > 1.96 -> 5%, |t| > 2.576 ->
        estimate  std_err  t_ratio  p_value  significant_10pct  significant_5pct  significant_1pct
 omega    0.0836   0.0241   3.4715   0.0005               True              True              True
 alpha    0.0904   0.0126   7.1843   0.0000               True              True              True
-beta     0.8973   0.0135  66.5051   0.0000               True              True              True
+beta     0.8973   0.0135  66.5052   0.0000               True              True              True
 gamma   -0.0979   0.0932  -1.0498   0.2938              False             False             False
 
 Log-likelihood : -5982.0948

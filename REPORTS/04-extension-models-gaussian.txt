@@ -2,15 +2,15 @@ Sample after alignment: T = 2765 obs (2015-04-02 -> 2026-03-31)
 
 Per-parameter significance (|t| > 1.645 -> 10%, |t| > 1.96 -> 5%, |t| > 2.576 -> 1%):
                  estimate  std_err   t_ratio  p_value  significant_10pct  significant_5pct  significant_1pct
-mu                -0.0198   0.0369   -0.5379   0.5907              False             False             False
-omega              0.0355   0.0116    3.0514   0.0023               True              True              True
-alpha              0.1695   0.0283    5.9802   0.0000               True              True              True
-xi                -0.0230   0.0136   -1.6905   0.0909               True             False             False
-beta               0.9784   0.0073  134.4085   0.0000               True              True              True
-gamma_tone         0.0062   0.0062    1.0074   0.3138              False             False             False
-gamma_artgrowth   -0.0159   0.0086   -1.8460   0.0649               True             False             False
+mu                -0.0251   0.0369   -0.6810   0.4959              False             False             False
+omega              0.0355   0.0116    3.0507   0.0023               True              True              True
+alpha              0.1695   0.0283    5.9804   0.0000               True              True              True
+xi                -0.0230   0.0136   -1.6911   0.0908               True             False             False
+beta               0.9784   0.0073  134.3381   0.0000               True              True              True
+gamma_tone         0.0063   0.0062    1.0094   0.3128              False             False             False
+gamma_artgrowth   -0.0159   0.0086   -1.8510   0.0642               True             False             False
 
-Log-likelihood : -5977.3101
+Log-likelihood : -5977.3102
 AIC            :  11968.6203
 BIC            :  12010.0939
 
@@ -18,10 +18,10 @@ beta = 0.9784   (stationary (|beta|<1))
 Half-life of a log-variance shock: 31.7 trading days
 
 Verdict:
-  mu               t = -0.54   p = 0.5907   -> not significant
+  mu               t = -0.68   p = 0.4959   -> not significant
   omega            t = +3.05   p = 0.0023   -> SIGNIFICANT at 1% (and 5%, 10%)
   alpha            t = +5.98   p = 0.0000   -> SIGNIFICANT at 1% (and 5%, 10%)
-  xi               t = -1.69   p = 0.0909   -> SIGNIFICANT at 10% only
-  beta             t = +134.41   p = 0.0000   -> SIGNIFICANT at 1% (and 5%, 10%)
-  gamma_tone       t = +1.01   p = 0.3138   -> not significant
-  gamma_artgrowth  t = -1.85   p = 0.0649   -> SIGNIFICANT at 10% only
+  xi               t = -1.69   p = 0.0908   -> SIGNIFICANT at 10% only
+  beta             t = +134.34   p = 0.0000   -> SIGNIFICANT at 1% (and 5%, 10%)
+  gamma_tone       t = +1.01   p = 0.3128   -> not significant
+  gamma_artgrowth  t = -1.85   p = 0.0642   -> SIGNIFICANT at 10% only
