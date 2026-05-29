@@ -1,0 +1,4 @@
+OLD found: True
+  L14: "    after_urls = set(df_without_outlier.loc[df_without_outlier['Date'] == d, 'url'])"
+  L15: "    is_outlier = ~before_day['url'].isin(after_urls)"
+  L20: "    y_after    = df_without_outlier.loc[df_without_outlier['Date'] == d, 'polarity'].values"

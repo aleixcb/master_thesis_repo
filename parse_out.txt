@@ -1,0 +1,130 @@
+=== Cell 30 id=eec6bae2 type=code ===
+# drop outliers in polarity using a modified IQR method
+#also considers the gap to the nearest in-fence point
+def remove_polarity_outliers(
+    df: pd.DataFrame,
+    date_col: str = 'Date',
+    multiplier: float = 1.5, #(a): IQR multiplier for defining the outlier fence   <-- NOTE: TUNE
+    min_gap: float = 1.5,   #(b): minimum gap to nearest in-fence point for an outlier to be dropped
+    min_group_size: int = 4,
+) -> pd.DataFrame:
+    """
+    Drop articles whose polarity is BOTH (a) outside the IQR fence and
+    (b) separated from the nearest in-fence point by at least `min_gap`.
+    """
+    def _filter(group):
+        if len(group) < min_group_size:
+            return group
+        q1 = group['polarity'].quantile(0.25)
+        q3 = group['polarity'].quantile(0.75)
+        iqr = q3 - q1
+        lower, upper = q1 - multiplier * iqr, q3 + multiplier * iqr
+        cand_mask = (group['polarity'] < lower) | (group['polarity'] > upper)
+        if not cand_mask.any():
+            return group
+        interior = group.loc[~cand_mask, 'polarity'].values
+        if len(interior) == 0:
+            return group
+        keep = ~cand_mask.copy()
+        for idx in group.index[cand_mask]:
+            v = group.loc[idx, 'polarity']
+            if np.min(np.abs(interior - v)) < min_gap:
+                keep.loc[idx] = True
+        return group[keep]
+
+    result = (
+        df.groupby(date_col, group_keys=False)
+          .apply(_filter)
+    )
+    # Pandas version compatibility: keep date_col as a column, not the index
+    if result.index.name == date_col:
+        result = result.reset_index()
+    else:
+        result = result.reset_index(drop=True)
+    return result
+
+
+df_without_outlier = remove_polarity_outliers(sent_dedup, date_col='Date')
+
+n_before = len(sent_dedup)
+n_after  = len(df_without_outlier)
+n_removed = n_before - n_after
+print(f'Articles before : {n_before:,}')
+print(f'Articles after  : {n_after:,}')
+print(f'Removed         : {n_removed:,}  ({n_removed/n_before*100:.2f}%)')
+
+=== Cell 31 id=e98927f8 type=code ===
+# plot comparison of polarity distributions before vs. after outlier removal
+# for a random sample of days
+
+N_DAYS = 5
+rng = np.random.default_rng()                       # no seed → new sample each run
+jitter_rng = np.random.default_rng(0)
+
+all_days = np.array(sorted(sent_dedup['Date'].unique()))
+days = sorted(rng.choice(all_days, size=N_DAYS, replace=False))
+
+fig, axes = plt.subplots(N_DAYS, 2, figsize=(10, 3 * N_DAYS), sharey='row')
+
+for row, d in enumerate(days):
+    before_day = sent_dedup[sent_dedup['Date'] == d]
+    # Handle both Date-as-column and Date-as-index (pandas version compat.)
+    _wo = (df_without_outlier.reset_index()
+           if 'Date' not in df_without_outlier.columns else df_without_outlier)
+    after_urls = set(_wo.loc[_wo['Date'] == d, 'url'])
+    is_outlier = ~before_day['url'].isin(after_urls)
+
+    y_before   = before_day['polarity'].values
+    y_outliers = before_day.loc[ is_outlier, 'polarity'].values
+    y_inliers  = before_day.loc[~is_outlier, 'polarity'].values
+    y_after    = _wo.loc[_wo['Date'] == d, 'polarity'].values
+
+    # ── Left subplot: BEFORE (outliers in red) ─────────────────────────────
+    ax_l = axes[row, 0]
+    ax_l.boxplot(
+        y_before, positions=[1], widths=0.6, showfliers=False,
+        medianprops=dict(color='black', linewidth=1.2),
+        boxprops=dict(color='steelblue'),
+        whiskerprops=dict(color='steelblue'),
+        capprops=dict(color='steelblue'),
+    )
+    if len(y_inliers) > 0:
+        x = 1 + jitter_rng.uniform(-0.18, 0.18, size=len(y_inliers))
+        ax_l.scatter(x, y_inliers, s=18, color='steelblue', alpha=0.55,
+                     edgecolor='white', linewidth=0.4, zorder=3)
+    if len(y_outliers) > 0:
+        x = 1 + jitter_rng.uniform(-0.18, 0.18, size=len(y_outliers))
+        ax_l.scatter(x, y_outliers, s=34, color='tomato', alpha=0.9,
+                     edgecolor='white', linewidth=0.4, zorder=4, label='Outlier')
+        ax_l.legend(loc='upper right', fontsize=8)
+
+    ax_l.set_title(f'{pd.Timestamp(d).strftime("%Y-%m-%d")} — Before  (n={len(y_before)})',
+                   fontsize=10)
+    ax_l.set_xticks([])
+    ax_l.set_ylabel('Polarity')
+    ax_l.grid(True, axis='y', linestyle='--', alpha=0.4)
+
+    # ── Right subplot: AFTER (no red points) ───────────────────────────────
+    ax_r = axes[row, 1]
+    ax_r.boxplot(
+        y_after, positions=[1], widths=0.6, showfliers=False,
+        medianprops=dict(color='black', linewidth=1.2),
+        boxprops=dict(color='seagreen'),
+        whiskerprops=dict(color='seagreen'),
+        capprops=dict(color='seagreen'),
+    )
+    if len(y_after) > 0:
+        x = 1 + jitter_rng.uniform(-0.18, 0.18, size=len(y_after))
+        ax_r.scatter(x, y_after, s=18, color='seagreen', alpha=0.55,
+                     edgecolor='white', linewidth=0.4, zorder=3)
+
+    n_removed = len(y_before) - len(y_after)
+    ax_r.set_title(f'{pd.Timestamp(d).strftime("%Y-%m-%d")} — After  '
+                   f'(n={len(y_after)}, −{n_removed})', fontsize=10)
+    ax_r.set_xticks([])
+    ax_r.grid(True, axis='y', linestyle='--', alpha=0.4)
+
+plt.suptitle('Within-day Polarity — Before vs. After Outlier Removal  (5 random days)',
+             fontsize=12, y=1.00)
+plt.tight_layout()
+plt.show()
