@@ -1,0 +1,175 @@
+test,horizon,rv_proxy,loss_type,model,statistic,p_value,n,bandwidth,null,alternative,included_mcs,method
+Diebold-Mariano,1,Parkinson,SE,GARCH-X (tone),-4.668478531087073,3.034384788991318e-06,813,0.0,Equal predictive accuracy vs baseline,two-sided; positive statistic favors augmented model,,standard
+Diebold-Mariano,1,Parkinson,SE,GARCH-X (art_growth),-1.6321385138021742,0.10265030998134583,813,0.0,Equal predictive accuracy vs baseline,two-sided; positive statistic favors augmented model,,standard
+Diebold-Mariano,1,Parkinson,SE,GARCHAND (tone),-5.585876667971265,2.3252421543773494e-08,813,0.0,Equal predictive accuracy vs baseline,two-sided; positive statistic favors augmented model,,standard
+Diebold-Mariano,1,Parkinson,SE,GARCHAND (art_growth),-3.3181508302047575,0.0009061553827904856,813,0.0,Equal predictive accuracy vs baseline,two-sided; positive statistic favors augmented model,,standard
+Diebold-Mariano,1,Parkinson,SE,"GARCHND (tone, kappa=30%)",-5.835762294907914,5.354518828326604e-09,813,0.0,Equal predictive accuracy vs baseline,two-sided; positive statistic favors augmented model,,standard
+Diebold-Mariano,1,Parkinson,SE,"GARCHND (art_growth, kappa=30%)",0.9672909290781568,0.33339861702479556,813,0.0,Equal predictive accuracy vs baseline,two-sided; positive statistic favors augmented model,,standard
+Diebold-Mariano,1,Parkinson,SE,EGARCH-X (tone + art_growth),-4.194885060082743,2.730099932923835e-05,813,0.0,Equal predictive accuracy vs baseline,two-sided; positive statistic favors augmented model,,standard
+Diebold-Mariano,1,Parkinson,HRMSE,GARCH-X (tone),-3.5308199936710483,0.0004142735748908777,813,0.0,Equal predictive accuracy vs baseline,two-sided; positive statistic favors augmented model,,standard
+Diebold-Mariano,1,Parkinson,HRMSE,GARCH-X (art_growth),-1.9001596796237046,0.05741216779333147,813,0.0,Equal predictive accuracy vs baseline,two-sided; positive statistic favors augmented model,,standard
+Diebold-Mariano,1,Parkinson,HRMSE,GARCHAND (tone),-4.790628288617049,1.6625988095153588e-06,813,0.0,Equal predictive accuracy vs baseline,two-sided; positive statistic favors augmented model,,standard
+Diebold-Mariano,1,Parkinson,HRMSE,GARCHAND (art_growth),-2.2149571919063624,0.02676300293804479,813,0.0,Equal predictive accuracy vs baseline,two-sided; positive statistic favors augmented model,,standard
+Diebold-Mariano,1,Parkinson,HRMSE,"GARCHND (tone, kappa=30%)",-1.459711827524858,0.1443692899223672,813,0.0,Equal predictive accuracy vs baseline,two-sided; positive statistic favors augmented model,,standard
+Diebold-Mariano,1,Parkinson,HRMSE,"GARCHND (art_growth, kappa=30%)",0.3217485707831794,0.747643178594896,813,0.0,Equal predictive accuracy vs baseline,two-sided; positive statistic favors augmented model,,standard
+Diebold-Mariano,1,Parkinson,HRMSE,EGARCH-X (tone + art_growth),-5.907232694912496,3.4790217373625865e-09,813,0.0,Equal predictive accuracy vs baseline,two-sided; positive statistic favors augmented model,,standard
+Clark-West,1,Parkinson,adjusted_MSPE,GARCH-X (tone),-3.975552805488122,0.9999648920194908,813,0.0,No MSPE improvement over baseline,one-sided; augmented model improves MSPE,,standard
+Clark-West,1,Parkinson,adjusted_MSPE,GARCH-X (art_growth),-1.018138344353144,0.845693892439821,813,0.0,No MSPE improvement over baseline,one-sided; augmented model improves MSPE,,standard
+Clark-West,1,Parkinson,adjusted_MSPE,GARCHAND (tone),-4.8729638881917525,0.9999994503183791,813,0.0,No MSPE improvement over baseline,one-sided; augmented model improves MSPE,,standard
+Clark-West,1,Parkinson,adjusted_MSPE,GARCHAND (art_growth),-2.828603942135321,0.9976624241703829,813,0.0,No MSPE improvement over baseline,one-sided; augmented model improves MSPE,,standard
+Clark-West,1,Parkinson,adjusted_MSPE,"GARCHND (tone, kappa=30%)",-5.3349573631002505,0.9999999522164946,813,0.0,No MSPE improvement over baseline,one-sided; augmented model improves MSPE,,standard
+Clark-West,1,Parkinson,adjusted_MSPE,"GARCHND (art_growth, kappa=30%)",2.092180913301488,0.018211167611115853,813,0.0,No MSPE improvement over baseline,one-sided; augmented model improves MSPE,,standard
+Clark-West,1,Parkinson,adjusted_MSPE,EGARCH-X (tone + art_growth),-1.9126885813722618,0.972106034070188,813,0.0,No MSPE improvement over baseline,one-sided; augmented model improves MSPE,,standard
+Model Confidence Set,1,Parkinson,HRMSE,"GARCH(1,1)",,0.768,813,,Model is in the superior set at alpha=0.10,excluded by iterative MCS,True,arch.bootstrap.MCS
+Model Confidence Set,1,Parkinson,HRMSE,GARCH-X (tone),,0.011,813,,Model is in the superior set at alpha=0.10,excluded by iterative MCS,False,arch.bootstrap.MCS
+Model Confidence Set,1,Parkinson,HRMSE,GARCH-X (art_growth),,0.127,813,,Model is in the superior set at alpha=0.10,excluded by iterative MCS,True,arch.bootstrap.MCS
+Model Confidence Set,1,Parkinson,HRMSE,GARCHAND (tone),,0.0,813,,Model is in the superior set at alpha=0.10,excluded by iterative MCS,False,arch.bootstrap.MCS
+Model Confidence Set,1,Parkinson,HRMSE,GARCHAND (art_growth),,0.121,813,,Model is in the superior set at alpha=0.10,excluded by iterative MCS,True,arch.bootstrap.MCS
+Model Confidence Set,1,Parkinson,HRMSE,"GARCHND (tone, kappa=30%)",,0.299,813,,Model is in the superior set at alpha=0.10,excluded by iterative MCS,True,arch.bootstrap.MCS
+Model Confidence Set,1,Parkinson,HRMSE,"GARCHND (art_growth, kappa=30%)",,1.0,813,,Model is in the superior set at alpha=0.10,excluded by iterative MCS,True,arch.bootstrap.MCS
+Model Confidence Set,1,Parkinson,HRMSE,EGARCH-X (tone + art_growth),,0.0,813,,Model is in the superior set at alpha=0.10,excluded by iterative MCS,False,arch.bootstrap.MCS
+Diebold-Mariano,5,Parkinson,SE,GARCH-X (tone),-3.605833505388782,0.0003111525941585924,809,4.0,Equal predictive accuracy vs baseline,two-sided; positive statistic favors augmented model,,Newey-West
+Diebold-Mariano,5,Parkinson,SE,GARCH-X (art_growth),-5.923112173823439,3.1590519089519375e-09,809,4.0,Equal predictive accuracy vs baseline,two-sided; positive statistic favors augmented model,,Newey-West
+Diebold-Mariano,5,Parkinson,SE,GARCHAND (tone),-3.129834189106489,0.0017490499832277795,809,4.0,Equal predictive accuracy vs baseline,two-sided; positive statistic favors augmented model,,Newey-West
+Diebold-Mariano,5,Parkinson,SE,GARCHAND (art_growth),-4.927073329141993,8.347043514156383e-07,809,4.0,Equal predictive accuracy vs baseline,two-sided; positive statistic favors augmented model,,Newey-West
+Diebold-Mariano,5,Parkinson,SE,"GARCHND (tone, kappa=30%)",-3.667736766230017,0.0002447069191973128,809,4.0,Equal predictive accuracy vs baseline,two-sided; positive statistic favors augmented model,,Newey-West
+Diebold-Mariano,5,Parkinson,SE,"GARCHND (art_growth, kappa=30%)",-2.5426892791720817,0.011000300315830325,809,4.0,Equal predictive accuracy vs baseline,two-sided; positive statistic favors augmented model,,Newey-West
+Diebold-Mariano,5,Parkinson,SE,EGARCH-X (tone + art_growth),-1.118762083864113,0.26324165128605914,809,4.0,Equal predictive accuracy vs baseline,two-sided; positive statistic favors augmented model,,Newey-West
+Diebold-Mariano,5,Parkinson,HRMSE,GARCH-X (tone),-3.8802969255636834,0.00010432902177748282,809,4.0,Equal predictive accuracy vs baseline,two-sided; positive statistic favors augmented model,,Newey-West
+Diebold-Mariano,5,Parkinson,HRMSE,GARCH-X (art_growth),-5.377185628408126,7.565915849383487e-08,809,4.0,Equal predictive accuracy vs baseline,two-sided; positive statistic favors augmented model,,Newey-West
+Diebold-Mariano,5,Parkinson,HRMSE,GARCHAND (tone),-2.2997157520676796,0.02146432911218943,809,4.0,Equal predictive accuracy vs baseline,two-sided; positive statistic favors augmented model,,Newey-West
+Diebold-Mariano,5,Parkinson,HRMSE,GARCHAND (art_growth),-4.6167040849581396,3.898825902570735e-06,809,4.0,Equal predictive accuracy vs baseline,two-sided; positive statistic favors augmented model,,Newey-West
+Diebold-Mariano,5,Parkinson,HRMSE,"GARCHND (tone, kappa=30%)",-0.634114892127748,0.5260058446262685,809,4.0,Equal predictive accuracy vs baseline,two-sided; positive statistic favors augmented model,,Newey-West
+Diebold-Mariano,5,Parkinson,HRMSE,"GARCHND (art_growth, kappa=30%)",-3.531485760780254,0.00041323210980159786,809,4.0,Equal predictive accuracy vs baseline,two-sided; positive statistic favors augmented model,,Newey-West
+Diebold-Mariano,5,Parkinson,HRMSE,EGARCH-X (tone + art_growth),-3.3137544285744513,0.0009205231520352797,809,4.0,Equal predictive accuracy vs baseline,two-sided; positive statistic favors augmented model,,Newey-West
+Clark-West,5,Parkinson,adjusted_MSPE,GARCH-X (tone),-3.5591836277612354,0.9998139953154825,809,4.0,No MSPE improvement over baseline,one-sided; augmented model improves MSPE,,Newey-West
+Clark-West,5,Parkinson,adjusted_MSPE,GARCH-X (art_growth),-5.57013046956437,0.9999999872725676,809,4.0,No MSPE improvement over baseline,one-sided; augmented model improves MSPE,,Newey-West
+Clark-West,5,Parkinson,adjusted_MSPE,GARCHAND (tone),-2.898829607111137,0.9981272080630601,809,4.0,No MSPE improvement over baseline,one-sided; augmented model improves MSPE,,Newey-West
+Clark-West,5,Parkinson,adjusted_MSPE,GARCHAND (art_growth),-4.630017872842998,0.999998171829142,809,4.0,No MSPE improvement over baseline,one-sided; augmented model improves MSPE,,Newey-West
+Clark-West,5,Parkinson,adjusted_MSPE,"GARCHND (tone, kappa=30%)",-3.5534474107570624,0.9998098913954903,809,4.0,No MSPE improvement over baseline,one-sided; augmented model improves MSPE,,Newey-West
+Clark-West,5,Parkinson,adjusted_MSPE,"GARCHND (art_growth, kappa=30%)",-1.9012133260543715,0.9713629618454838,809,4.0,No MSPE improvement over baseline,one-sided; augmented model improves MSPE,,Newey-West
+Clark-West,5,Parkinson,adjusted_MSPE,EGARCH-X (tone + art_growth),-0.04895347297195099,0.519521812679456,809,4.0,No MSPE improvement over baseline,one-sided; augmented model improves MSPE,,Newey-West
+Model Confidence Set,5,Parkinson,HRMSE,"GARCH(1,1)",,1.0,809,,Model is in the superior set at alpha=0.10,excluded by iterative MCS,True,arch.bootstrap.MCS
+Model Confidence Set,5,Parkinson,HRMSE,GARCH-X (tone),,0.014,809,,Model is in the superior set at alpha=0.10,excluded by iterative MCS,False,arch.bootstrap.MCS
+Model Confidence Set,5,Parkinson,HRMSE,GARCH-X (art_growth),,0.001,809,,Model is in the superior set at alpha=0.10,excluded by iterative MCS,False,arch.bootstrap.MCS
+Model Confidence Set,5,Parkinson,HRMSE,GARCHAND (tone),,0.09,809,,Model is in the superior set at alpha=0.10,excluded by iterative MCS,False,arch.bootstrap.MCS
+Model Confidence Set,5,Parkinson,HRMSE,GARCHAND (art_growth),,0.004,809,,Model is in the superior set at alpha=0.10,excluded by iterative MCS,False,arch.bootstrap.MCS
+Model Confidence Set,5,Parkinson,HRMSE,"GARCHND (tone, kappa=30%)",,0.609,809,,Model is in the superior set at alpha=0.10,excluded by iterative MCS,True,arch.bootstrap.MCS
+Model Confidence Set,5,Parkinson,HRMSE,"GARCHND (art_growth, kappa=30%)",,0.021,809,,Model is in the superior set at alpha=0.10,excluded by iterative MCS,False,arch.bootstrap.MCS
+Model Confidence Set,5,Parkinson,HRMSE,EGARCH-X (tone + art_growth),,0.029,809,,Model is in the superior set at alpha=0.10,excluded by iterative MCS,False,arch.bootstrap.MCS
+Diebold-Mariano,22,Parkinson,SE,GARCH-X (tone),-4.849583483668732,1.2372099083002297e-06,792,21.0,Equal predictive accuracy vs baseline,two-sided; positive statistic favors augmented model,,Newey-West
+Diebold-Mariano,22,Parkinson,SE,GARCH-X (art_growth),-10.763836382145318,0.0,792,21.0,Equal predictive accuracy vs baseline,two-sided; positive statistic favors augmented model,,Newey-West
+Diebold-Mariano,22,Parkinson,SE,GARCHAND (tone),-0.18018923969113887,0.8570040056560972,792,21.0,Equal predictive accuracy vs baseline,two-sided; positive statistic favors augmented model,,Newey-West
+Diebold-Mariano,22,Parkinson,SE,GARCHAND (art_growth),-8.209977993029279,2.220446049250313e-16,792,21.0,Equal predictive accuracy vs baseline,two-sided; positive statistic favors augmented model,,Newey-West
+Diebold-Mariano,22,Parkinson,SE,"GARCHND (tone, kappa=30%)",-2.1809573929552135,0.02918656803173003,792,21.0,Equal predictive accuracy vs baseline,two-sided; positive statistic favors augmented model,,Newey-West
+Diebold-Mariano,22,Parkinson,SE,"GARCHND (art_growth, kappa=30%)",-6.5361939620027805,6.310396649666927e-11,792,21.0,Equal predictive accuracy vs baseline,two-sided; positive statistic favors augmented model,,Newey-West
+Diebold-Mariano,22,Parkinson,SE,EGARCH-X (tone + art_growth),0.7847068342865806,0.4326254748376994,792,21.0,Equal predictive accuracy vs baseline,two-sided; positive statistic favors augmented model,,Newey-West
+Diebold-Mariano,22,Parkinson,HRMSE,GARCH-X (tone),-5.056617115500668,4.2675883293874506e-07,792,21.0,Equal predictive accuracy vs baseline,two-sided; positive statistic favors augmented model,,Newey-West
+Diebold-Mariano,22,Parkinson,HRMSE,GARCH-X (art_growth),-5.150113967075835,2.603282234225901e-07,792,21.0,Equal predictive accuracy vs baseline,two-sided; positive statistic favors augmented model,,Newey-West
+Diebold-Mariano,22,Parkinson,HRMSE,GARCHAND (tone),1.1407593897001131,0.2539700644790228,792,21.0,Equal predictive accuracy vs baseline,two-sided; positive statistic favors augmented model,,Newey-West
+Diebold-Mariano,22,Parkinson,HRMSE,GARCHAND (art_growth),-4.706114275932108,2.524830220673735e-06,792,21.0,Equal predictive accuracy vs baseline,two-sided; positive statistic favors augmented model,,Newey-West
+Diebold-Mariano,22,Parkinson,HRMSE,"GARCHND (tone, kappa=30%)",-0.38940100177509723,0.6969795310951046,792,21.0,Equal predictive accuracy vs baseline,two-sided; positive statistic favors augmented model,,Newey-West
+Diebold-Mariano,22,Parkinson,HRMSE,"GARCHND (art_growth, kappa=30%)",-5.2713879526754654,1.3539593513023362e-07,792,21.0,Equal predictive accuracy vs baseline,two-sided; positive statistic favors augmented model,,Newey-West
+Diebold-Mariano,22,Parkinson,HRMSE,EGARCH-X (tone + art_growth),0.13974734717218862,0.8888596157954645,792,21.0,Equal predictive accuracy vs baseline,two-sided; positive statistic favors augmented model,,Newey-West
+Clark-West,22,Parkinson,adjusted_MSPE,GARCH-X (tone),-4.986082886727385,0.9999996919214034,792,21.0,No MSPE improvement over baseline,one-sided; augmented model improves MSPE,,Newey-West
+Clark-West,22,Parkinson,adjusted_MSPE,GARCH-X (art_growth),-10.756116184250772,1.0,792,21.0,No MSPE improvement over baseline,one-sided; augmented model improves MSPE,,Newey-West
+Clark-West,22,Parkinson,adjusted_MSPE,GARCHAND (tone),0.23631786396268115,0.406593013010522,792,21.0,No MSPE improvement over baseline,one-sided; augmented model improves MSPE,,Newey-West
+Clark-West,22,Parkinson,adjusted_MSPE,GARCHAND (art_growth),-8.160056816243252,0.9999999999999998,792,21.0,No MSPE improvement over baseline,one-sided; augmented model improves MSPE,,Newey-West
+Clark-West,22,Parkinson,adjusted_MSPE,"GARCHND (tone, kappa=30%)",-1.9825402519500563,0.9762905965247123,792,21.0,No MSPE improvement over baseline,one-sided; augmented model improves MSPE,,Newey-West
+Clark-West,22,Parkinson,adjusted_MSPE,"GARCHND (art_growth, kappa=30%)",-6.338947087890376,0.9999999998843296,792,21.0,No MSPE improvement over baseline,one-sided; augmented model improves MSPE,,Newey-West
+Clark-West,22,Parkinson,adjusted_MSPE,EGARCH-X (tone + art_growth),1.097984587151228,0.1361056097754747,792,21.0,No MSPE improvement over baseline,one-sided; augmented model improves MSPE,,Newey-West
+Model Confidence Set,22,Parkinson,HRMSE,"GARCH(1,1)",,0.498,792,,Model is in the superior set at alpha=0.10,excluded by iterative MCS,True,arch.bootstrap.MCS
+Model Confidence Set,22,Parkinson,HRMSE,GARCH-X (tone),,0.0,792,,Model is in the superior set at alpha=0.10,excluded by iterative MCS,False,arch.bootstrap.MCS
+Model Confidence Set,22,Parkinson,HRMSE,GARCH-X (art_growth),,0.001,792,,Model is in the superior set at alpha=0.10,excluded by iterative MCS,False,arch.bootstrap.MCS
+Model Confidence Set,22,Parkinson,HRMSE,GARCHAND (tone),,1.0,792,,Model is in the superior set at alpha=0.10,excluded by iterative MCS,True,arch.bootstrap.MCS
+Model Confidence Set,22,Parkinson,HRMSE,GARCHAND (art_growth),,0.001,792,,Model is in the superior set at alpha=0.10,excluded by iterative MCS,False,arch.bootstrap.MCS
+Model Confidence Set,22,Parkinson,HRMSE,"GARCHND (tone, kappa=30%)",,0.498,792,,Model is in the superior set at alpha=0.10,excluded by iterative MCS,True,arch.bootstrap.MCS
+Model Confidence Set,22,Parkinson,HRMSE,"GARCHND (art_growth, kappa=30%)",,0.0,792,,Model is in the superior set at alpha=0.10,excluded by iterative MCS,False,arch.bootstrap.MCS
+Model Confidence Set,22,Parkinson,HRMSE,EGARCH-X (tone + art_growth),,0.715,792,,Model is in the superior set at alpha=0.10,excluded by iterative MCS,True,arch.bootstrap.MCS
+Diebold-Mariano,1,Rogers-Satchell,SE,GARCH-X (tone),-5.041403368727727,4.621301978868786e-07,810,0.0,Equal predictive accuracy vs baseline,two-sided; positive statistic favors augmented model,,standard
+Diebold-Mariano,1,Rogers-Satchell,SE,GARCH-X (art_growth),-1.5589943501266224,0.118997717398728,810,0.0,Equal predictive accuracy vs baseline,two-sided; positive statistic favors augmented model,,standard
+Diebold-Mariano,1,Rogers-Satchell,SE,GARCHAND (tone),-5.941577006425472,2.8229307780236468e-09,810,0.0,Equal predictive accuracy vs baseline,two-sided; positive statistic favors augmented model,,standard
+Diebold-Mariano,1,Rogers-Satchell,SE,GARCHAND (art_growth),-3.4605160617518655,0.0005391410698141197,810,0.0,Equal predictive accuracy vs baseline,two-sided; positive statistic favors augmented model,,standard
+Diebold-Mariano,1,Rogers-Satchell,SE,"GARCHND (tone, kappa=30%)",-6.2430359851491986,4.291580424364838e-10,810,0.0,Equal predictive accuracy vs baseline,two-sided; positive statistic favors augmented model,,standard
+Diebold-Mariano,1,Rogers-Satchell,SE,"GARCHND (art_growth, kappa=30%)",1.4026912795483448,0.16070891886387972,810,0.0,Equal predictive accuracy vs baseline,two-sided; positive statistic favors augmented model,,standard
+Diebold-Mariano,1,Rogers-Satchell,SE,EGARCH-X (tone + art_growth),-3.651564373545272,0.00026064774475642594,810,0.0,Equal predictive accuracy vs baseline,two-sided; positive statistic favors augmented model,,standard
+Diebold-Mariano,1,Rogers-Satchell,HRMSE,GARCH-X (tone),-1.3595270325464697,0.1739796423879434,810,0.0,Equal predictive accuracy vs baseline,two-sided; positive statistic favors augmented model,,standard
+Diebold-Mariano,1,Rogers-Satchell,HRMSE,GARCH-X (art_growth),-1.2361131646571966,0.21641650209156005,810,0.0,Equal predictive accuracy vs baseline,two-sided; positive statistic favors augmented model,,standard
+Diebold-Mariano,1,Rogers-Satchell,HRMSE,GARCHAND (tone),-1.3734712918579708,0.16960587999318877,810,0.0,Equal predictive accuracy vs baseline,two-sided; positive statistic favors augmented model,,standard
+Diebold-Mariano,1,Rogers-Satchell,HRMSE,GARCHAND (art_growth),-1.2012367152662664,0.22965939107293454,810,0.0,Equal predictive accuracy vs baseline,two-sided; positive statistic favors augmented model,,standard
+Diebold-Mariano,1,Rogers-Satchell,HRMSE,"GARCHND (tone, kappa=30%)",1.1497906786370564,0.2502300953720642,810,0.0,Equal predictive accuracy vs baseline,two-sided; positive statistic favors augmented model,,standard
+Diebold-Mariano,1,Rogers-Satchell,HRMSE,"GARCHND (art_growth, kappa=30%)",-0.5544944955312966,0.5792404717494761,810,0.0,Equal predictive accuracy vs baseline,two-sided; positive statistic favors augmented model,,standard
+Diebold-Mariano,1,Rogers-Satchell,HRMSE,EGARCH-X (tone + art_growth),-1.5568172522868087,0.11951387992495222,810,0.0,Equal predictive accuracy vs baseline,two-sided; positive statistic favors augmented model,,standard
+Clark-West,1,Rogers-Satchell,adjusted_MSPE,GARCH-X (tone),-4.375629265185754,0.9999939458669886,810,0.0,No MSPE improvement over baseline,one-sided; augmented model improves MSPE,,standard
+Clark-West,1,Rogers-Satchell,adjusted_MSPE,GARCH-X (art_growth),-0.9517816087235788,0.8293961244519119,810,0.0,No MSPE improvement over baseline,one-sided; augmented model improves MSPE,,standard
+Clark-West,1,Rogers-Satchell,adjusted_MSPE,GARCHAND (tone),-5.256962860066124,0.9999999267730627,810,0.0,No MSPE improvement over baseline,one-sided; augmented model improves MSPE,,standard
+Clark-West,1,Rogers-Satchell,adjusted_MSPE,GARCHAND (art_growth),-2.9434354683976847,0.998377042571482,810,0.0,No MSPE improvement over baseline,one-sided; augmented model improves MSPE,,standard
+Clark-West,1,Rogers-Satchell,adjusted_MSPE,"GARCHND (tone, kappa=30%)",-5.778465709458999,0.9999999962307549,810,0.0,No MSPE improvement over baseline,one-sided; augmented model improves MSPE,,standard
+Clark-West,1,Rogers-Satchell,adjusted_MSPE,"GARCHND (art_growth, kappa=30%)",2.517901732050085,0.0059028126674293135,810,0.0,No MSPE improvement over baseline,one-sided; augmented model improves MSPE,,standard
+Clark-West,1,Rogers-Satchell,adjusted_MSPE,EGARCH-X (tone + art_growth),-1.4953864636651468,0.9325931943915644,810,0.0,No MSPE improvement over baseline,one-sided; augmented model improves MSPE,,standard
+Model Confidence Set,1,Rogers-Satchell,HRMSE,"GARCH(1,1)",,0.395,810,,Model is in the superior set at alpha=0.10,excluded by iterative MCS,True,arch.bootstrap.MCS
+Model Confidence Set,1,Rogers-Satchell,HRMSE,GARCH-X (tone),,0.395,810,,Model is in the superior set at alpha=0.10,excluded by iterative MCS,True,arch.bootstrap.MCS
+Model Confidence Set,1,Rogers-Satchell,HRMSE,GARCH-X (art_growth),,0.388,810,,Model is in the superior set at alpha=0.10,excluded by iterative MCS,True,arch.bootstrap.MCS
+Model Confidence Set,1,Rogers-Satchell,HRMSE,GARCHAND (tone),,0.281,810,,Model is in the superior set at alpha=0.10,excluded by iterative MCS,True,arch.bootstrap.MCS
+Model Confidence Set,1,Rogers-Satchell,HRMSE,GARCHAND (art_growth),,0.395,810,,Model is in the superior set at alpha=0.10,excluded by iterative MCS,True,arch.bootstrap.MCS
+Model Confidence Set,1,Rogers-Satchell,HRMSE,"GARCHND (tone, kappa=30%)",,1.0,810,,Model is in the superior set at alpha=0.10,excluded by iterative MCS,True,arch.bootstrap.MCS
+Model Confidence Set,1,Rogers-Satchell,HRMSE,"GARCHND (art_growth, kappa=30%)",,0.403,810,,Model is in the superior set at alpha=0.10,excluded by iterative MCS,True,arch.bootstrap.MCS
+Model Confidence Set,1,Rogers-Satchell,HRMSE,EGARCH-X (tone + art_growth),,0.199,810,,Model is in the superior set at alpha=0.10,excluded by iterative MCS,True,arch.bootstrap.MCS
+Diebold-Mariano,5,Rogers-Satchell,SE,GARCH-X (tone),-3.6661428508215668,0.00024623641015764086,809,4.0,Equal predictive accuracy vs baseline,two-sided; positive statistic favors augmented model,,Newey-West
+Diebold-Mariano,5,Rogers-Satchell,SE,GARCH-X (art_growth),-6.378414217189958,1.7893109216515768e-10,809,4.0,Equal predictive accuracy vs baseline,two-sided; positive statistic favors augmented model,,Newey-West
+Diebold-Mariano,5,Rogers-Satchell,SE,GARCHAND (tone),-3.1631168502293368,0.0015608966665925372,809,4.0,Equal predictive accuracy vs baseline,two-sided; positive statistic favors augmented model,,Newey-West
+Diebold-Mariano,5,Rogers-Satchell,SE,GARCHAND (art_growth),-5.299511632676461,1.1611283867729583e-07,809,4.0,Equal predictive accuracy vs baseline,two-sided; positive statistic favors augmented model,,Newey-West
+Diebold-Mariano,5,Rogers-Satchell,SE,"GARCHND (tone, kappa=30%)",-3.7298992939108015,0.00019155631777389992,809,4.0,Equal predictive accuracy vs baseline,two-sided; positive statistic favors augmented model,,Newey-West
+Diebold-Mariano,5,Rogers-Satchell,SE,"GARCHND (art_growth, kappa=30%)",-2.666207675028778,0.007671228864219559,809,4.0,Equal predictive accuracy vs baseline,two-sided; positive statistic favors augmented model,,Newey-West
+Diebold-Mariano,5,Rogers-Satchell,SE,EGARCH-X (tone + art_growth),-0.7823372269448238,0.43401641435929506,809,4.0,Equal predictive accuracy vs baseline,two-sided; positive statistic favors augmented model,,Newey-West
+Diebold-Mariano,5,Rogers-Satchell,HRMSE,GARCH-X (tone),-4.666358534012955,3.0658455134613405e-06,809,4.0,Equal predictive accuracy vs baseline,two-sided; positive statistic favors augmented model,,Newey-West
+Diebold-Mariano,5,Rogers-Satchell,HRMSE,GARCH-X (art_growth),-5.233269193694101,1.6653792411780444e-07,809,4.0,Equal predictive accuracy vs baseline,two-sided; positive statistic favors augmented model,,Newey-West
+Diebold-Mariano,5,Rogers-Satchell,HRMSE,GARCHAND (tone),-2.80698570341471,0.005000746103913434,809,4.0,Equal predictive accuracy vs baseline,two-sided; positive statistic favors augmented model,,Newey-West
+Diebold-Mariano,5,Rogers-Satchell,HRMSE,GARCHAND (art_growth),-4.587472492539277,4.486445191798083e-06,809,4.0,Equal predictive accuracy vs baseline,two-sided; positive statistic favors augmented model,,Newey-West
+Diebold-Mariano,5,Rogers-Satchell,HRMSE,"GARCHND (tone, kappa=30%)",-0.32106973994227506,0.7481575413029766,809,4.0,Equal predictive accuracy vs baseline,two-sided; positive statistic favors augmented model,,Newey-West
+Diebold-Mariano,5,Rogers-Satchell,HRMSE,"GARCHND (art_growth, kappa=30%)",-3.8773729643879045,0.00010559042898417026,809,4.0,Equal predictive accuracy vs baseline,two-sided; positive statistic favors augmented model,,Newey-West
+Diebold-Mariano,5,Rogers-Satchell,HRMSE,EGARCH-X (tone + art_growth),-4.3056951613092505,1.664621584374082e-05,809,4.0,Equal predictive accuracy vs baseline,two-sided; positive statistic favors augmented model,,Newey-West
+Clark-West,5,Rogers-Satchell,adjusted_MSPE,GARCH-X (tone),-3.7161993435693996,0.9998988789793806,809,4.0,No MSPE improvement over baseline,one-sided; augmented model improves MSPE,,Newey-West
+Clark-West,5,Rogers-Satchell,adjusted_MSPE,GARCH-X (art_growth),-6.019809443440625,0.9999999991268874,809,4.0,No MSPE improvement over baseline,one-sided; augmented model improves MSPE,,Newey-West
+Clark-West,5,Rogers-Satchell,adjusted_MSPE,GARCHAND (tone),-2.986205052863258,0.9985876841454174,809,4.0,No MSPE improvement over baseline,one-sided; augmented model improves MSPE,,Newey-West
+Clark-West,5,Rogers-Satchell,adjusted_MSPE,GARCHAND (art_growth),-4.990349732183667,0.9999996986496458,809,4.0,No MSPE improvement over baseline,one-sided; augmented model improves MSPE,,Newey-West
+Clark-West,5,Rogers-Satchell,adjusted_MSPE,"GARCHND (tone, kappa=30%)",-3.661890814893414,0.9998748197166571,809,4.0,No MSPE improvement over baseline,one-sided; augmented model improves MSPE,,Newey-West
+Clark-West,5,Rogers-Satchell,adjusted_MSPE,"GARCHND (art_growth, kappa=30%)",-2.007581330222394,0.9776560999308594,809,4.0,No MSPE improvement over baseline,one-sided; augmented model improves MSPE,,Newey-West
+Clark-West,5,Rogers-Satchell,adjusted_MSPE,EGARCH-X (tone + art_growth),0.21695814830843013,0.41412048043603156,809,4.0,No MSPE improvement over baseline,one-sided; augmented model improves MSPE,,Newey-West
+Model Confidence Set,5,Rogers-Satchell,HRMSE,"GARCH(1,1)",,1.0,809,,Model is in the superior set at alpha=0.10,excluded by iterative MCS,True,arch.bootstrap.MCS
+Model Confidence Set,5,Rogers-Satchell,HRMSE,GARCH-X (tone),,0.002,809,,Model is in the superior set at alpha=0.10,excluded by iterative MCS,False,arch.bootstrap.MCS
+Model Confidence Set,5,Rogers-Satchell,HRMSE,GARCH-X (art_growth),,0.0,809,,Model is in the superior set at alpha=0.10,excluded by iterative MCS,False,arch.bootstrap.MCS
+Model Confidence Set,5,Rogers-Satchell,HRMSE,GARCHAND (tone),,0.026,809,,Model is in the superior set at alpha=0.10,excluded by iterative MCS,False,arch.bootstrap.MCS
+Model Confidence Set,5,Rogers-Satchell,HRMSE,GARCHAND (art_growth),,0.002,809,,Model is in the superior set at alpha=0.10,excluded by iterative MCS,False,arch.bootstrap.MCS
+Model Confidence Set,5,Rogers-Satchell,HRMSE,"GARCHND (tone, kappa=30%)",,0.78,809,,Model is in the superior set at alpha=0.10,excluded by iterative MCS,True,arch.bootstrap.MCS
+Model Confidence Set,5,Rogers-Satchell,HRMSE,"GARCHND (art_growth, kappa=30%)",,0.003,809,,Model is in the superior set at alpha=0.10,excluded by iterative MCS,False,arch.bootstrap.MCS
+Model Confidence Set,5,Rogers-Satchell,HRMSE,EGARCH-X (tone + art_growth),,0.003,809,,Model is in the superior set at alpha=0.10,excluded by iterative MCS,False,arch.bootstrap.MCS
+Diebold-Mariano,22,Rogers-Satchell,SE,GARCH-X (tone),-4.811822944281026,1.495598234146911e-06,792,21.0,Equal predictive accuracy vs baseline,two-sided; positive statistic favors augmented model,,Newey-West
+Diebold-Mariano,22,Rogers-Satchell,SE,GARCH-X (art_growth),-11.961072232700854,0.0,792,21.0,Equal predictive accuracy vs baseline,two-sided; positive statistic favors augmented model,,Newey-West
+Diebold-Mariano,22,Rogers-Satchell,SE,GARCHAND (tone),-0.1830077859566271,0.8547919094828595,792,21.0,Equal predictive accuracy vs baseline,two-sided; positive statistic favors augmented model,,Newey-West
+Diebold-Mariano,22,Rogers-Satchell,SE,GARCHAND (art_growth),-9.053838948594548,0.0,792,21.0,Equal predictive accuracy vs baseline,two-sided; positive statistic favors augmented model,,Newey-West
+Diebold-Mariano,22,Rogers-Satchell,SE,"GARCHND (tone, kappa=30%)",-2.16484553498586,0.03039951636404048,792,21.0,Equal predictive accuracy vs baseline,two-sided; positive statistic favors augmented model,,Newey-West
+Diebold-Mariano,22,Rogers-Satchell,SE,"GARCHND (art_growth, kappa=30%)",-6.904634711222628,5.03330710444061e-12,792,21.0,Equal predictive accuracy vs baseline,two-sided; positive statistic favors augmented model,,Newey-West
+Diebold-Mariano,22,Rogers-Satchell,SE,EGARCH-X (tone + art_growth),0.8189189060184459,0.41283268249064653,792,21.0,Equal predictive accuracy vs baseline,two-sided; positive statistic favors augmented model,,Newey-West
+Diebold-Mariano,22,Rogers-Satchell,HRMSE,GARCH-X (tone),-5.2560230413977935,1.4720385554944926e-07,792,21.0,Equal predictive accuracy vs baseline,two-sided; positive statistic favors augmented model,,Newey-West
+Diebold-Mariano,22,Rogers-Satchell,HRMSE,GARCH-X (art_growth),-4.7630605173247815,1.9067862517818668e-06,792,21.0,Equal predictive accuracy vs baseline,two-sided; positive statistic favors augmented model,,Newey-West
+Diebold-Mariano,22,Rogers-Satchell,HRMSE,GARCHAND (tone),1.2932322266869116,0.19593075280571348,792,21.0,Equal predictive accuracy vs baseline,two-sided; positive statistic favors augmented model,,Newey-West
+Diebold-Mariano,22,Rogers-Satchell,HRMSE,GARCHAND (art_growth),-4.373498118573364,1.2227129910780121e-05,792,21.0,Equal predictive accuracy vs baseline,two-sided; positive statistic favors augmented model,,Newey-West
+Diebold-Mariano,22,Rogers-Satchell,HRMSE,"GARCHND (tone, kappa=30%)",-0.254453902536678,0.7991449126961103,792,21.0,Equal predictive accuracy vs baseline,two-sided; positive statistic favors augmented model,,Newey-West
+Diebold-Mariano,22,Rogers-Satchell,HRMSE,"GARCHND (art_growth, kappa=30%)",-5.079232142598517,3.789634173134715e-07,792,21.0,Equal predictive accuracy vs baseline,two-sided; positive statistic favors augmented model,,Newey-West
+Diebold-Mariano,22,Rogers-Satchell,HRMSE,EGARCH-X (tone + art_growth),-0.16372021058701844,0.8699514064836671,792,21.0,Equal predictive accuracy vs baseline,two-sided; positive statistic favors augmented model,,Newey-West
+Clark-West,22,Rogers-Satchell,adjusted_MSPE,GARCH-X (tone),-4.962363188562859,0.999999651796909,792,21.0,No MSPE improvement over baseline,one-sided; augmented model improves MSPE,,Newey-West
+Clark-West,22,Rogers-Satchell,adjusted_MSPE,GARCH-X (art_growth),-12.137198115896215,1.0,792,21.0,No MSPE improvement over baseline,one-sided; augmented model improves MSPE,,Newey-West
+Clark-West,22,Rogers-Satchell,adjusted_MSPE,GARCHAND (tone),0.22660036587012833,0.4103672538846418,792,21.0,No MSPE improvement over baseline,one-sided; augmented model improves MSPE,,Newey-West
+Clark-West,22,Rogers-Satchell,adjusted_MSPE,GARCHAND (art_growth),-9.085787273503938,1.0,792,21.0,No MSPE improvement over baseline,one-sided; augmented model improves MSPE,,Newey-West
+Clark-West,22,Rogers-Satchell,adjusted_MSPE,"GARCHND (tone, kappa=30%)",-1.968234255240833,0.9754794547183907,792,21.0,No MSPE improvement over baseline,one-sided; augmented model improves MSPE,,Newey-West
+Clark-West,22,Rogers-Satchell,adjusted_MSPE,"GARCHND (art_growth, kappa=30%)",-6.761204241263878,0.9999999999931575,792,21.0,No MSPE improvement over baseline,one-sided; augmented model improves MSPE,,Newey-West
+Clark-West,22,Rogers-Satchell,adjusted_MSPE,EGARCH-X (tone + art_growth),1.1211407381521254,0.13111398019201115,792,21.0,No MSPE improvement over baseline,one-sided; augmented model improves MSPE,,Newey-West
+Model Confidence Set,22,Rogers-Satchell,HRMSE,"GARCH(1,1)",,0.391,792,,Model is in the superior set at alpha=0.10,excluded by iterative MCS,True,arch.bootstrap.MCS
+Model Confidence Set,22,Rogers-Satchell,HRMSE,GARCH-X (tone),,0.0,792,,Model is in the superior set at alpha=0.10,excluded by iterative MCS,False,arch.bootstrap.MCS
+Model Confidence Set,22,Rogers-Satchell,HRMSE,GARCH-X (art_growth),,0.001,792,,Model is in the superior set at alpha=0.10,excluded by iterative MCS,False,arch.bootstrap.MCS
+Model Confidence Set,22,Rogers-Satchell,HRMSE,GARCHAND (tone),,1.0,792,,Model is in the superior set at alpha=0.10,excluded by iterative MCS,True,arch.bootstrap.MCS
+Model Confidence Set,22,Rogers-Satchell,HRMSE,GARCHAND (art_growth),,0.003,792,,Model is in the superior set at alpha=0.10,excluded by iterative MCS,False,arch.bootstrap.MCS
+Model Confidence Set,22,Rogers-Satchell,HRMSE,"GARCHND (tone, kappa=30%)",,0.463,792,,Model is in the superior set at alpha=0.10,excluded by iterative MCS,True,arch.bootstrap.MCS
+Model Confidence Set,22,Rogers-Satchell,HRMSE,"GARCHND (art_growth, kappa=30%)",,0.001,792,,Model is in the superior set at alpha=0.10,excluded by iterative MCS,False,arch.bootstrap.MCS
+Model Confidence Set,22,Rogers-Satchell,HRMSE,EGARCH-X (tone + art_growth),,0.498,792,,Model is in the superior set at alpha=0.10,excluded by iterative MCS,True,arch.bootstrap.MCS

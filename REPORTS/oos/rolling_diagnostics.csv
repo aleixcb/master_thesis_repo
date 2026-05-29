@@ -1,0 +1,9 @@
+,failures,forecast_floor_events,n_rows,method_L-BFGS-B,method_Nelder-Mead,method_carry-forward
+"GARCH(1,1)",0,0,2439,813,0,0
+GARCH-X (tone),0,0,2439,813,0,0
+GARCH-X (art_growth),0,0,2439,813,0,0
+GARCHAND (tone),0,0,2439,813,0,0
+GARCHAND (art_growth),0,0,2439,813,0,0
+"GARCHND (tone, kappa=30%)",0,0,2439,813,0,0
+"GARCHND (art_growth, kappa=30%)",0,0,2439,813,0,0
+EGARCH-X (tone + art_growth),0,0,2439,813,0,0
