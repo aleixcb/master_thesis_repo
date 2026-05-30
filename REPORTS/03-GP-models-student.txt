@@ -10,7 +10,7 @@ Distribution:      Standardized Student's t   AIC:                           119
 Method:                  Maximum Likelihood   BIC:                           11944.2
                                               No. Observations:                 2765
 Date:                      Sat, May 30 2026   Df Residuals:                     2765
-Time:                              16:39:22   Df Model:                            0
+Time:                              17:38:13   Df Model:                            0
                              Volatility Model                             
 ==========================================================================
                  coef    std err          t      P>|t|    95.0% Conf. Int.

@@ -87,21 +87,24 @@ MODELS: List[Dict] = [
         "stud_block":  "GARCH-X (tone) -- Student-t",
     },
     {
-        "title": "3. GARCH-X (article growth) — G&amp;P Eq. (4)",
+        "title": "3. GARCH-X (log article growth) — G&amp;P Eq. (4)",
         "variance": (
             "&sigma;<sup>2</sup><sub>t</sub> = &omega; "
             "+ &alpha; &middot; r<sup>2</sup><sub>t-1</sub> "
             "+ &beta; &middot; &sigma;<sup>2</sup><sub>t-1</sub> "
-            "+ &gamma; &middot; art_growth<sup>2</sup><sub>t-1</sub>"
+            "+ &gamma; &middot; log_art_growth<sup>2</sup><sub>t-1</sub>"
         ),
         "explanation": (
-            "Same structure as the previous GARCH-X, but using the daily "
-            "growth in article volume as a proxy for news intensity. We want "
-            "to see whether spikes in media coverage (a significant &gamma;) "
-            "anticipate next-day volatility."
+            "Same structure as the previous GARCH-X, but using the log-growth "
+            "in article volume (log(1+N<sub>t</sub>) &minus; log(1+N<sub>t-1</sub>)) "
+            "as a proxy for news intensity. The log transform replaces the raw "
+            "growth rate to remove a single-day outlier (art_growth = 61 on "
+            "2015-10-23) that would otherwise dominate the squared term. We want "
+            "to see whether sustained changes in media coverage (a significant "
+            "&gamma;) anticipate next-day volatility."
         ),
-        "gauss_block": "GARCH-X (article growth)",
-        "stud_block":  "GARCH-X (article growth) -- Student-t",
+        "gauss_block": "GARCH-X (log article growth)",
+        "stud_block":  "GARCH-X (log article growth) -- Student-t",
     },
     {
         "title": "4. GARCHAND (tone) — G&amp;P Eq. (5)",
@@ -124,26 +127,26 @@ MODELS: List[Dict] = [
         "stud_block":  "GARCHAND (tone) -- Student-t",
     },
     {
-        "title": "5. GARCHAND (article growth) — G&amp;P Eq. (6)",
+        "title": "5. GARCHAND (log article growth) — G&amp;P Eq. (6)",
         "variance": (
             "&sigma;<sup>2</sup><sub>t</sub> = &omega; "
             "+ &alpha; &middot; r<sup>2</sup><sub>t-1</sub> "
             "+ &beta; &middot; &sigma;<sup>2</sup><sub>t-1</sub> "
             "+ &gamma; &middot; d<sub>2</sub> "
-            "&middot; art_growth<sup>2</sup><sub>t-1</sub>,   "
-            "d<sub>2</sub> = 1{art_growth<sub>t-1</sub> &gt; 0}"
+            "&middot; log_art_growth<sup>2</sup><sub>t-1</sub>,   "
+            "d<sub>2</sub> = 1{log_art_growth<sub>t-1</sub> &gt; 0}"
         ),
         "explanation": (
             "The article-volume effect is switched on only on days in which "
-            "the news flow GROWS relative to the previous day. We want to "
-            "show that novelty (rising coverage) is what moves volatility, "
-            "rather than low news volumes."
+            "the news flow GROWS relative to the previous day (log_art_growth "
+            "&gt; 0). We want to show that novelty (rising coverage) is what "
+            "moves volatility, rather than low news volumes."
         ),
-        "gauss_block": "GARCHAND (article growth)",
-        "stud_block":  "GARCHAND (article growth) -- Student-t",
+        "gauss_block": "GARCHAND (log article growth)",
+        "stud_block":  "GARCHAND (log article growth) -- Student-t",
     },
     {
-        "title": "6. GARCHND (tone &amp; article growth) — G&amp;P Eq. (7)",
+        "title": "6. GARCHND (tone &amp; log article growth) — G&amp;P Eq. (7)",
         "variance": (
             "&sigma;<sup>2</sup><sub>t</sub> = &omega; "
             "+ &alpha; &middot; r<sup>2</sup><sub>t-1</sub> "
@@ -151,7 +154,7 @@ MODELS: List[Dict] = [
             "+ &gamma; &middot; d<sub>3</sub> "
             "&middot; x<sup>2</sup><sub>t-1</sub>,   "
             "d<sub>3</sub> = 1{&sigma;<sup>2</sup><sub>t-1</sub> "
-            "&ge; &kappa;},   x &isin; {tone, art_growth}"
+            "&ge; &kappa;},   x &isin; {tone, log_art_growth}"
         ),
         "explanation": (
             "The news impact activates only when the previous day's variance "
@@ -162,9 +165,9 @@ MODELS: List[Dict] = [
             "that news amplifies volatility only when the market is already "
             "stressed."
         ),
-        # GARCHND has 4 sub-blocks in the captured text (tone/art_growth x kappa_low/kappa_high)
-        "gauss_block": "GARCHND (tone, art_growth)",
-        "stud_block":  "GARCHND (tone, art_growth) -- Student-t",
+        # GARCHND has 4 sub-blocks in the captured text (tone/log_art_growth x kappa_low/kappa_high)
+        "gauss_block": "GARCHND (tone, log_art_growth)",
+        "stud_block":  "GARCHND (tone, log_art_growth) -- Student-t",
         "is_garchnd": True,
     },
     {
@@ -175,14 +178,14 @@ MODELS: List[Dict] = [
             "+ &xi; &middot; z<sub>t-1</sub> "
             "+ &beta; &middot; ln(&sigma;<sup>2</sup><sub>t-1</sub>) "
             "+ &gamma;<sub>1</sub> &middot; tone<sub>t-1</sub> "
-            "+ &gamma;<sub>2</sub> &middot; art_growth<sub>t-1</sub>"
+            "+ &gamma;<sub>2</sub> &middot; log_art_growth<sub>t-1</sub>"
         ),
         "explanation": (
             "Log-variance specification (Nelson, 1991) with two exogenous "
             "regressors. It (i) guarantees positivity of &sigma;<sup>2</sup> "
             "without parameter restrictions, (ii) captures asymmetry through "
             "the leverage term &xi; (negative shocks weigh more than "
-            "positive ones), and (iii) allows tone and art_growth to enter "
+            "positive ones), and (iii) allows tone and log_art_growth to enter "
             "linearly (not as squares). We want to show that EGARCH-X "
             "captures asymmetry more cleanly than GARCHAND, and to test "
             "whether &gamma;<sub>1</sub> and &gamma;<sub>2</sub> are "
