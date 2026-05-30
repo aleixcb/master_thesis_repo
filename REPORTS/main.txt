@@ -1,5 +1,5 @@
 ==============================================================================
-REMX volatility-model estimation report  (generated 2026-05-30 13:17)
+REMX volatility-model estimation report  (generated 2026-05-30 13:19)
 ==============================================================================
 
 ------------------------------------------------------------------------------
@@ -17,7 +17,7 @@ Distribution:                  Normal   AIC:                           11972.5
 Method:            Maximum Likelihood   BIC:                           11996.2
                                         No. Observations:                 2765
 Date:                Sat, May 30 2026   Df Residuals:                     2764
-Time:                        13:16:42   Df Model:                            1
+Time:                        13:18:25   Df Model:                            1
                                   Mean Model                                 
 =============================================================================
                  coef    std err          t      P>|t|       95.0% Conf. Int.
@@ -266,7 +266,7 @@ Distribution:      Standardized Student's t   AIC:                           119
 Method:                  Maximum Likelihood   BIC:                           11951.9
                                               No. Observations:                 2765
 Date:                      Sat, May 30 2026   Df Residuals:                     2764
-Time:                              13:16:51   Df Model:                            1
+Time:                              13:18:35   Df Model:                            1
                                   Mean Model                                 
 =============================================================================
                  coef    std err          t      P>|t|       95.0% Conf. Int.
