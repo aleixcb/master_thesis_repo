@@ -1,30 +1,30 @@
 Sample after alignment: T = 2765 obs (2015-04-02 -> 2026-03-31)
 
 Per-parameter significance (|t| > 1.645 -> 10%, |t| > 1.96 -> 5%, |t| > 2.576 -> 1%):
-                 estimate  std_err   t_ratio  p_value  significant_10pct  significant_5pct  significant_1pct
-mu                -0.0214   0.0368   -0.5828   0.5600              False             False             False
-omega              0.0352   0.0101    3.4747   0.0005               True              True              True
-alpha              0.1547   0.0241    6.4299   0.0000               True              True              True
-xi                -0.0147   0.0108   -1.3666   0.1717              False             False             False
-beta               0.9787   0.0063  155.3734   0.0000               True              True              True
-gamma_tone         0.0103   0.0049    2.0992   0.0358               True              True             False
-gamma_artgrowth   -0.0177   0.0099   -1.7926   0.0730               True             False             False
-nu                10.8415   2.1248    5.1024   0.0000               True              True              True
+                estimate  std_err   t_ratio  p_value  significant_10pct  significant_5pct  significant_1pct
+mu               -0.0177   0.0025   -6.9528   0.0000               True              True              True
+omega             0.0319   0.0102    3.1320   0.0017               True              True              True
+alpha             0.1565   0.0253    6.1860   0.0000               True              True              True
+xi               -0.0143   0.0107   -1.3360   0.1816              False             False             False
+beta              0.9792   0.0065  150.4773   0.0000               True              True              True
+gamma_tone        0.0106   0.0049    2.1500   0.0316               True              True             False
+gamma_log_artg   -0.0099   0.0601   -0.1645   0.8693              False             False             False
+nu               10.7946   2.1052    5.1275   0.0000               True              True              True
 
-Log-likelihood : -5949.9469
-AIC            :  11915.8938
-BIC            :  11963.2922
+Log-likelihood : -5951.4540
+AIC            :  11918.9080
+BIC            :  11966.3063
 
-beta = 0.9787   (stationary (|beta|<1))
-Half-life of a log-variance shock: 32.2 trading days
-nu   = 10.8415   (Student-t dof; lower -> heavier tails. Note: the t-ratio for nu tests H0: nu = 0, which is not the meaningful null. To test Gaussian vs Student-t use an LR test against the Gaussian EGARCH-X.)
+beta = 0.9792   (stationary (|beta|<1))
+Half-life of a log-variance shock: 33.0 trading days
+nu   = 10.7946   (Student-t dof; lower -> heavier tails. Note: the t-ratio for nu tests H0: nu = 0, which is not the meaningful null. To test Gaussian vs Student-t use an LR test against the Gaussian EGARCH-X.)
 
 Verdict:
-  mu               t = -0.58   p = 0.5600   -> not significant
-  omega            t = +3.47   p = 0.0005   -> SIGNIFICANT at 1% (and 5%, 10%)
-  alpha            t = +6.43   p = 0.0000   -> SIGNIFICANT at 1% (and 5%, 10%)
-  xi               t = -1.37   p = 0.1717   -> not significant
-  beta             t = +155.37   p = 0.0000   -> SIGNIFICANT at 1% (and 5%, 10%)
-  gamma_tone       t = +2.10   p = 0.0358   -> SIGNIFICANT at 5% (and 10%) only
-  gamma_artgrowth  t = -1.79   p = 0.0730   -> SIGNIFICANT at 10% only
-  nu               t = +5.10   p = 0.0000   -> SIGNIFICANT at 1% (and 5%, 10%)
+  mu               t = -6.95   p = 0.0000   -> SIGNIFICANT at 1% (and 5%, 10%)
+  omega            t = +3.13   p = 0.0017   -> SIGNIFICANT at 1% (and 5%, 10%)
+  alpha            t = +6.19   p = 0.0000   -> SIGNIFICANT at 1% (and 5%, 10%)
+  xi               t = -1.34   p = 0.1816   -> not significant
+  beta             t = +150.48   p = 0.0000   -> SIGNIFICANT at 1% (and 5%, 10%)
+  gamma_tone       t = +2.15   p = 0.0316   -> SIGNIFICANT at 5% (and 10%) only
+  gamma_log_artg   t = -0.16   p = 0.8693   -> not significant
+  nu               t = +5.13   p = 0.0000   -> SIGNIFICANT at 1% (and 5%, 10%)
