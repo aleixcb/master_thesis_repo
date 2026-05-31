@@ -196,28 +196,50 @@ MODELS: List[Dict] = [
 # Robustness check data (hardcoded from notebook 06 and 07 outputs)
 # --------------------------------------------------------------------------- #
 
-# Check 1 — OOS forecasting (notebook 06, cells 5–6)
+# Check 1 — Rolling-window OOS forecasting (notebook 06, cells 5 and 8)
+# OOS: 2023-01-03 -> 2026-03-31, 813 origins, parameters re-estimated daily
+# on a 1,260-day rolling sample. Both RV proxies (Parkinson, Rogers-Satchell)
+# in %²/day. Losses: HRMSE, QLIKE, RMSE, MAE. DM (two-sided), CW (one-sided).
+# Sort order: model -> proxy -> h.
+
+# [Model, Proxy, h, HRMSE, QLIKE, RMSE, MAE, N]
 OOS_LOSS = [
-    # [Model, h, QLIKE, MSE]
-    ["GARCH(1,1) Student-t (base)",    "1",  "2.4225", "48.0561"],
-    ["GARCH(1,1) Student-t (base)",    "5",  "2.4561", "38.7524"],
-    ["GARCH(1,1) Student-t (base)",   "22",  "2.3900", "29.7071"],
-    ["GARCHND tone κ=50%",             "1",  "2.4397", "49.2963"],
-    ["GARCHND tone κ=50%",             "5",  "2.4792", "41.8515"],
-    ["GARCHND tone κ=50%",            "22",  "2.4417", "39.1974"],
-    ["GARCHND log_artg κ=50%",         "1",  "2.4167", "43.2401"],
-    ["GARCHND log_artg κ=50%",         "5",  "2.4561", "35.6411"],
-    ["GARCHND log_artg κ=50%",        "22",  "2.4229", "33.9900"],
+    ["GARCH(1,1)",       "Parkinson",       "1",   "5.4023", "2.0760", "4.8866", "3.9585", "813"],
+    ["GARCH(1,1)",       "Parkinson",       "5",   "2.9753", "2.0933", "4.4833", "3.7785", "809"],
+    ["GARCH(1,1)",       "Parkinson",      "22",   "2.6582", "2.1211", "4.1826", "3.6778", "792"],
+    ["GARCH(1,1)",       "Rogers-Satchell", "1",  "12.5808", "2.0617", "4.8178", "3.9280", "813"],
+    ["GARCH(1,1)",       "Rogers-Satchell", "5",   "2.9436", "2.0791", "4.3905", "3.7677", "809"],
+    ["GARCH(1,1)",       "Rogers-Satchell","22",   "2.6068", "2.1039", "4.1738", "3.6484", "792"],
+    ["GARCHND tone",     "Parkinson",       "1",   "5.3128", "2.0730", "4.7686", "3.9090", "813"],
+    ["GARCHND tone",     "Parkinson",       "5",   "2.9460", "2.0928", "4.3911", "3.7591", "809"],
+    ["GARCHND tone",     "Parkinson",      "22",   "2.7032", "2.1348", "4.2540", "3.7962", "792"],
+    ["GARCHND tone",     "Rogers-Satchell", "1",  "12.5734", "2.0580", "4.6975", "3.8701", "813"],
+    ["GARCHND tone",     "Rogers-Satchell", "5",   "2.9023", "2.0779", "4.2912", "3.7452", "809"],
+    ["GARCHND tone",     "Rogers-Satchell","22",   "2.6578", "2.1174", "4.2456", "3.7671", "792"],
+    ["GARCHND log_artg", "Parkinson",       "1",   "5.3400", "2.0750", "4.7698", "3.9104", "813"],
+    ["GARCHND log_artg", "Parkinson",       "5",   "2.9620", "2.0949", "4.4162", "3.7639", "809"],
+    ["GARCHND log_artg", "Parkinson",      "22",   "2.6966", "2.1361", "4.3428", "3.8460", "792"],
+    ["GARCHND log_artg", "Rogers-Satchell", "1",  "12.4528", "2.0599", "4.6937", "3.8731", "813"],
+    ["GARCHND log_artg", "Rogers-Satchell", "5",   "2.9226", "2.0799", "4.3137", "3.7527", "809"],
+    ["GARCHND log_artg", "Rogers-Satchell","22",   "2.6487", "2.1187", "4.3356", "3.8295", "792"],
 ]
 
-OOS_DM = [
-    # [Candidate, h, DM-QLIKE, p, DM-MSE, p]
-    ["GARCHND tone κ=50%",      "1",  "−6.262", "0.0000", "−3.150", "0.0016"],
-    ["GARCHND tone κ=50%",      "5",  "−4.882", "0.0000", "−4.013", "0.0001"],
-    ["GARCHND tone κ=50%",     "22",  "−6.267", "0.0000", "−3.409", "0.0007"],
-    ["GARCHND log_artg κ=50%",  "1",  "+1.287", "0.1982", "+5.153", "0.0000"],
-    ["GARCHND log_artg κ=50%",  "5",  "+0.003", "0.9975", "+1.831", "0.0671"],
-    ["GARCHND log_artg κ=50%", "22",  "−2.496", "0.0125", "−1.969", "0.0490"],
+# DM (two-sided) and Clark-West (one-sided) vs GARCH(1,1) Student-t baseline.
+# DM > 0 ⇒ candidate has lower MSE; CW > 0 ⇒ candidate adds predictive content vs nested baseline.
+# [Candidate, Proxy, h, DM, DM_p, CW, CW_p]
+OOS_DM_CW = [
+    ["GARCHND tone",     "Parkinson",       "1",  "+5.332", "0.0000", "+5.695", "0.0000"],
+    ["GARCHND tone",     "Parkinson",       "5",  "+2.071", "0.0383", "+2.293", "0.0109"],
+    ["GARCHND tone",     "Parkinson",      "22",  "−0.988", "0.3230", "−0.699", "0.7577"],
+    ["GARCHND tone",     "Rogers-Satchell", "1",  "+5.449", "0.0000", "+5.816", "0.0000"],
+    ["GARCHND tone",     "Rogers-Satchell", "5",  "+2.120", "0.0340", "+2.332", "0.0098"],
+    ["GARCHND tone",     "Rogers-Satchell","22",  "−0.973", "0.3305", "−0.690", "0.7549"],
+    ["GARCHND log_artg", "Parkinson",       "1",  "+3.814", "0.0001", "+4.350", "0.0000"],
+    ["GARCHND log_artg", "Parkinson",       "5",  "+1.195", "0.2323", "+1.544", "0.0612"],
+    ["GARCHND log_artg", "Parkinson",      "22",  "−2.097", "0.0360", "−1.790", "0.9633"],
+    ["GARCHND log_artg", "Rogers-Satchell", "1",  "+4.191", "0.0000", "+4.695", "0.0000"],
+    ["GARCHND log_artg", "Rogers-Satchell", "5",  "+1.310", "0.1903", "+1.641", "0.0504"],
+    ["GARCHND log_artg", "Rogers-Satchell","22",  "−2.065", "0.0389", "−1.768", "0.9615"],
 ]
 
 # Check 2 — Placebo (notebook 06, cell 8)
@@ -262,29 +284,29 @@ STABILITY_ARTG = [
 
 # Check 4 — Cluster count (notebook 06, cell 12)
 CLUSTERS_TONE = [
-    ["1", "2021-01-25", "2021-04-06", "50"],
-    ["2", "2026-02-03", "2026-03-31", "40"],
-    ["3", "2020-03-04", "2020-04-22", "35"],
-    ["4", "2025-10-14", "2025-11-14", "24"],
-    ["5", "2025-04-11", "2025-04-28", "11"],
-    ["6", "2018-12-24", "2019-01-08", "10"],
-    ["7", "2024-09-30", "2024-10-11", "10"],
-    ["8", "2022-05-11", "2022-05-23",  "9"],
-    ["9", "2022-11-08", "2022-11-18",  "9"],
-    ["10","2022-06-03", "2022-06-13",  "7"],
+    ["1", "2021-02-10", "2021-04-01", "36"],
+    ["2", "2020-03-11", "2020-04-14", "24"],
+    ["3", "2025-10-15", "2025-11-12", "21"],
+    ["4", "2026-03-05", "2026-03-30", "18"],
+    ["5", "2026-02-03", "2026-02-19", "12"],
+    ["6", "2025-04-11", "2025-04-23",  "8"],
+    ["7", "2018-12-24", "2019-01-02",  "6"],
+    ["8", "2022-11-08", "2022-11-15",  "6"],
+    ["9", "2024-09-30", "2024-10-01",  "2"],
+    ["10","2021-01-11", "2021-01-11",  "1"],
 ]
 
 CLUSTERS_ARTG = [
-    ["1", "2021-02-04", "2021-04-06", "42"],
-    ["2", "2020-03-04", "2020-04-29", "40"],
-    ["3", "2025-10-15", "2025-11-12", "21"],
-    ["4", "2026-03-05", "2026-03-31", "19"],
-    ["5", "2021-01-07", "2021-01-25", "12"],
-    ["6", "2026-02-03", "2026-02-19", "12"],
-    ["7", "2024-09-30", "2024-10-14", "11"],
-    ["8", "2018-12-24", "2019-01-08", "10"],
-    ["9", "2022-05-11", "2022-05-23",  "9"],
-    ["10","2022-06-03", "2022-06-15",  "9"],
+    ["1", "2020-03-04", "2020-04-17", "32"],
+    ["2", "2021-01-07", "2021-02-18", "29"],
+    ["3", "2021-03-01", "2021-04-01", "24"],
+    ["4", "2025-10-15", "2025-10-29", "11"],
+    ["5", "2024-09-30", "2024-10-11", "10"],
+    ["6", "2026-02-03", "2026-02-17", "10"],
+    ["7", "2022-05-11", "2022-05-23",  "9"],
+    ["8", "2018-12-24", "2019-01-03",  "7"],
+    ["9", "2025-04-11", "2025-04-22",  "7"],
+    ["10","2026-03-24", "2026-03-31",  "6"],
 ]
 
 # Check 5 — HAC/MBB SEs (notebook 07, cell 3)
@@ -570,28 +592,64 @@ def render_garchnd(story, styles, label: str, sub_results):
 # --------------------------------------------------------------------------- #
 
 def render_check1(story, styles):
-    story.append(Paragraph("Check 1 — Out-of-sample forecasting (h = 1, 5, 22 days)", styles["ModelTitle"]))
     story.append(Paragraph(
-        "In-sample fit through 2025-03-31 (2,514 obs). OOS window: 2025-04-01 to "
-        "2026-03-31 (251 obs). Baseline is GARCH(1,1) Student-t. "
-        "DM &gt; 0 means the candidate beats the baseline; p-values are two-sided.",
+        "Check 1 — Rolling-window out-of-sample forecasting (h = 1, 5, 22 days)",
+        styles["ModelTitle"],
+    ))
+    story.append(Paragraph(
+        "Out-of-sample window: <b>2023-01-03 to 2026-03-31</b> (813 forecast origins). "
+        "Parameters are re-estimated <b>daily</b> on a <b>1,260-day rolling sample</b>. "
+        "The forecast at origin &tau; is the average of the iterated conditional-variance "
+        "path &sigma;<sup>2</sup><sub>&tau;+1|&tau;</sub>,&hellip;,&sigma;<sup>2</sup><sub>&tau;+h|&tau;</sub>; "
+        "the target is the corresponding h-day mean of the realised-variance proxy. "
+        "Two proxies are reported in parallel: <b>Parkinson</b> (RV_park) and "
+        "<b>Rogers&ndash;Satchell</b> (RV_rs), both in %<sup>2</sup>/day. "
+        "Losses: HRMSE, QLIKE (Patton 2011, robust to RV-noise), RMSE, MAE. "
+        "Tests against the GARCH(1,1) Student-t baseline use Newey&ndash;West LRV at lag h&minus;1: "
+        "<b>Diebold&ndash;Mariano</b> (two-sided on squared-loss differential; DM &gt; 0 ⇒ candidate "
+        "has lower MSE) and <b>Clark&ndash;West</b> (one-sided, the appropriate test for "
+        "nested models since the baseline is &gamma; = 0; CW &gt; 0 ⇒ candidate adds "
+        "genuine predictive content). Rows sorted by model &rarr; proxy &rarr; h.",
         styles["Body"],
     ))
 
-    story.append(Paragraph("Loss functions (mean over OOS)", styles["SubSection"]))
-    hdr = ["Model", "h", "QLIKE", "MSE"]
-    cw = [7.5 * cm, 1.2 * cm, 2.8 * cm, 2.8 * cm]
+    story.append(Paragraph(
+        "Loss functions (averaged over the 813 origins)", styles["SubSection"],
+    ))
+    hdr = ["Model", "Proxy", "h", "HRMSE", "QLIKE", "RMSE", "MAE", "N"]
+    cw = [3.2 * cm, 2.8 * cm, 0.8 * cm, 1.7 * cm, 1.7 * cm, 1.7 * cm, 1.7 * cm, 1.0 * cm]
     story.append(_tbl([hdr] + OOS_LOSS, cw))
     story.append(Spacer(1, 8))
 
-    story.append(Paragraph("Diebold-Mariano test (baseline vs candidate)", styles["SubSection"]))
-    hdr2 = ["Candidate", "h", "DM-QLIKE", "p", "DM-MSE", "p"]
-    cw2 = [5.5 * cm, 1.0 * cm, 2.2 * cm, 2.0 * cm, 2.2 * cm, 1.4 * cm]
-    story.append(_tbl([hdr2] + OOS_DM, cw2))
     story.append(Paragraph(
-        "Verdict: neither GARCHND specification improves OOS forecasting. "
-        "GARCHND tone κ=50% is dominated by the baseline across all horizons and loss functions. "
-        "GARCHND log_artg κ=50% shows marginal MSE gains at h=1 but no QLIKE gain.",
+        "Diebold&ndash;Mariano and Clark&ndash;West vs GARCH(1,1) baseline",
+        styles["SubSection"],
+    ))
+    hdr2 = ["Candidate", "Proxy", "h", "DM", "DM p", "CW", "CW p"]
+    cw2 = [3.4 * cm, 2.8 * cm, 0.8 * cm, 2.0 * cm, 2.0 * cm, 2.0 * cm, 2.0 * cm]
+    story.append(_tbl([hdr2] + OOS_DM_CW, cw2))
+
+    story.append(Paragraph(
+        "Verdict: the rolling-window evidence is markedly more favourable to the "
+        "GARCHND models than the static-split forecast we ran before. "
+        "<b>At h = 1</b>, both candidates beat the GARCH(1,1) baseline by large, "
+        "highly-significant margins under both RV proxies "
+        "(GARCHND tone: DM &asymp; +5.4, CW &asymp; +5.8, p &lt; 0.001; "
+        "GARCHND log_artg: DM &asymp; +4.0, CW &asymp; +4.5, p &lt; 0.001). "
+        "Clark&ndash;West &mdash; the appropriate test for the nested &gamma; = 0 null &mdash; "
+        "confirms that the news/regime term carries genuine predictive content "
+        "at the one-day horizon. <b>At h = 5</b> the picture splits: "
+        "GARCHND tone retains a significant edge (DM p &asymp; 0.034&ndash;0.038, CW p &asymp; 0.01), "
+        "whereas GARCHND log_artg is no longer significant under DM but is "
+        "borderline under CW (p &asymp; 0.05&ndash;0.06). <b>At h = 22</b> the news effect "
+        "decays: both candidates underperform the baseline (DM &lt; 0; significantly so "
+        "for log_artg, with one-sided Clark&ndash;West p &gt; 0.95 rejecting any predictive gain). "
+        "This is the signature of a short-lived information shock that is correctly "
+        "priced into next-day variance but adds noise once the iterated forecast horizon "
+        "exceeds the news half-life. The conclusion overturns the previous "
+        "&ldquo;no OOS value&rdquo; reading: the in-sample &gamma; carries real, "
+        "horizon-bounded forecasting power, especially when the news regressor is the "
+        "GDELT tone.",
         styles["Verdict"],
     ))
 
@@ -667,16 +725,16 @@ def render_check4(story, styles):
     cw = [0.8 * cm, 3.0 * cm, 3.0 * cm, 1.8 * cm]
 
     story.append(Paragraph(
-        "x = tone: 193 triggered days (6.98%), 21 distinct episodes; "
-        "recommended block length &ge; 50 days",
+        "x = tone: 110 triggered days (3.98%), 15 distinct episodes; "
+        "recommended block length &ge; 36 days",
         styles["SubSection"],
     ))
     story.append(_tbl([hdr] + CLUSTERS_TONE, cw))
     story.append(Spacer(1, 8))
 
     story.append(Paragraph(
-        "x = log_art_growth: 179 triggered days (6.47%), 20 distinct episodes; "
-        "recommended block length &ge; 42 days",
+        "x = log_art_growth: 129 triggered days (4.67%), 22 distinct episodes; "
+        "recommended block length &ge; 32 days",
         styles["SubSection"],
     ))
     story.append(_tbl([hdr] + CLUSTERS_ARTG, cw))
@@ -806,10 +864,20 @@ def main() -> None:
     story.append(Paragraph(
         "Six diagnostic checks applied to the GARCHND κ=50% Student-t models "
         "(the best in-sample specifications). Checks 1–4 are from notebook 06; "
-        "Checks 5–6 from notebook 07. All checks point to the same conclusion: "
-        "the in-sample significance of &gamma; is a regime artefact with no "
-        "out-of-sample value, and the sentiment variable was measuring global "
-        "chemistry noise rather than REMX-specific information.",
+        "Checks 5–6 from notebook 07. The picture that emerges is more nuanced "
+        "than the original static-OOS reading: the rolling-window forecast (Check 1, "
+        "813 origins with daily refit and two RV proxies) shows that both GARCHND "
+        "specifications add genuine one-day-ahead predictive content over GARCH(1,1) "
+        "&mdash; significant under both Diebold&ndash;Mariano and Clark&ndash;West &mdash; "
+        "with the tone-augmented model retaining a significant edge at h = 5. "
+        "The advantage disappears at h = 22, consistent with a short-lived news shock. "
+        "The remaining checks qualify the in-sample identification: the news term is "
+        "partly redundant with a regime intercept (Check 2), the t-ratio on &gamma; "
+        "is sensitive to the sigmoid sharpness (Check 3), the high-volatility regime "
+        "is concentrated in a handful of long episodes (Check 4), and a permissive "
+        "GDELT filter dominates the sentiment series (Check 6) &mdash; but the OOS "
+        "gain at short horizons survives all of these qualifications and reverses "
+        "the previous &ldquo;regime artefact&rdquo; verdict.",
         styles["Body"],
     ))
     story.append(Spacer(1, 6))
