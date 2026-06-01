@@ -9,8 +9,8 @@ Vol Model:                      GARCH   Log-Likelihood:               -5982.31
 Distribution:                  Normal   AIC:                           11970.6
 Method:            Maximum Likelihood   BIC:                           11988.4
                                         No. Observations:                 2765
-Date:                Sat, May 30 2026   Df Residuals:                     2765
-Time:                        17:38:04   Df Model:                            0
+Date:                Mon, Jun 01 2026   Df Residuals:                     2765
+Time:                        09:18:22   Df Model:                            0
                              Volatility Model                             
 ==========================================================================
                  coef    std err          t      P>|t|    95.0% Conf. Int.
@@ -47,21 +47,21 @@ Sample after alignment: T = 2765 obs (2015-04-02 -> 2026-03-31)
 
 Per-parameter significance (|t| > 1.645 -> 10%, |t| > 1.96 -> 5%, |t| > 2.576 -> 1%):
        estimate  std_err  t_ratio  p_value  significant_10pct  significant_5pct  significant_1pct
-omega    0.0835   0.0457   1.8258   0.0679               True             False             False
-alpha    0.0905   0.0159   5.7033   0.0000               True              True              True
-beta     0.8961   0.0179  50.0241   0.0000               True              True              True
-gamma    0.0024   0.0213   0.1136   0.9096              False             False             False
+omega    0.0907   0.0305   2.9703   0.0030               True              True              True
+alpha    0.0898   0.0162   5.5564   0.0000               True              True              True
+beta     0.8967   0.0184  48.8103   0.0000               True              True              True
+gamma   -0.0047   0.0151  -0.3121   0.7549              False             False             False
 
-Log-likelihood : -5982.5250
-AIC            :  11973.0499
-BIC            :  11996.7491
-alpha + beta   :  0.9867   (stationary (<1))
+Log-likelihood : -5982.4884
+AIC            :  11972.9767
+BIC            :  11996.6759
+alpha + beta   :  0.9866   (stationary (<1))
 
 Verdict:
-  omega         t = +1.83   p = 0.0679   -> SIGNIFICANT at 10% only
-  alpha         t = +5.70   p = 0.0000   -> SIGNIFICANT at 1% (and 5%, 10%)
-  beta          t = +50.02   p = 0.0000   -> SIGNIFICANT at 1% (and 5%, 10%)
-  gamma         t = +0.11   p = 0.9096   -> not significant
+  omega         t = +2.97   p = 0.0030   -> SIGNIFICANT at 1% (and 5%, 10%)
+  alpha         t = +5.56   p = 0.0000   -> SIGNIFICANT at 1% (and 5%, 10%)
+  beta          t = +48.81   p = 0.0000   -> SIGNIFICANT at 1% (and 5%, 10%)
+  gamma         t = -0.31   p = 0.7549   -> not significant
 
 ------------------------------------------------------------------------------
 GARCH-X (log article growth)
@@ -71,21 +71,21 @@ Sample after alignment: T = 2765 obs (2015-04-02 -> 2026-03-31)
 
 Per-parameter significance (|t| > 1.645 -> 10%, |t| > 1.96 -> 5%, |t| > 2.576 -> 1%):
        estimate  std_err  t_ratio  p_value  significant_10pct  significant_5pct  significant_1pct
-omega    0.0757   0.0362   2.0947   0.0362               True              True             False
-alpha    0.0910   0.0160   5.6763   0.0000               True              True              True
-beta     0.8959   0.0181  49.5268   0.0000               True              True              True
-gamma    0.0203   0.0372   0.5476   0.5840              False             False             False
+omega    0.0780   0.0370   2.1088   0.0350               True              True             False
+alpha    0.0908   0.0160   5.6643   0.0000               True              True              True
+beta     0.8961   0.0181  49.5127   0.0000               True              True              True
+gamma    0.0170   0.0419   0.4068   0.6842              False             False             False
 
-Log-likelihood : -5982.2558
-AIC            :  11972.5115
-BIC            :  11996.2107
+Log-likelihood : -5982.4084
+AIC            :  11972.8167
+BIC            :  11996.5159
 alpha + beta   :  0.9869   (stationary (<1))
 
 Verdict:
-  omega         t = +2.09   p = 0.0362   -> SIGNIFICANT at 5% (and 10%) only
-  alpha         t = +5.68   p = 0.0000   -> SIGNIFICANT at 1% (and 5%, 10%)
-  beta          t = +49.53   p = 0.0000   -> SIGNIFICANT at 1% (and 5%, 10%)
-  gamma         t = +0.55   p = 0.5840   -> not significant
+  omega         t = +2.11   p = 0.0350   -> SIGNIFICANT at 5% (and 10%) only
+  alpha         t = +5.66   p = 0.0000   -> SIGNIFICANT at 1% (and 5%, 10%)
+  beta          t = +49.51   p = 0.0000   -> SIGNIFICANT at 1% (and 5%, 10%)
+  gamma         t = +0.41   p = 0.6842   -> not significant
 
 ------------------------------------------------------------------------------
 GARCHAND (tone)
@@ -95,24 +95,24 @@ Sample after alignment: T = 2765 obs (2015-04-02 -> 2026-03-31)
 
 Per-parameter significance (|t| > 1.645 -> 10%, |t| > 1.96 -> 5%, |t| > 2.576 -> 1%):
        estimate  std_err  t_ratio  p_value  significant_10pct  significant_5pct  significant_1pct
-omega    0.0899   0.0353   2.5503   0.0108               True              True             False
-alpha    0.0904   0.0159   5.6758   0.0000               True              True              True
-beta     0.8958   0.0180  49.7159   0.0000               True              True              True
-gamma   -0.0009   0.0041  -0.2274   0.8201              False             False             False
-theta    0.4979   6.7407   0.0739   0.9411              False             False             False
+omega    0.0899   0.0319   2.8172   0.0048               True              True              True
+alpha    0.0899   0.0160   5.6072   0.0000               True              True              True
+beta     0.8967   0.0181  49.4677   0.0000               True              True              True
+gamma   -0.0030   0.0162  -0.1857   0.8527              False             False             False
+theta    0.4971   7.5039   0.0663   0.9472              False             False             False
 
-Log-likelihood : -5982.5410
-AIC            :  11975.0819
-BIC            :  12004.7059
-alpha + beta   :  0.9862   (stationary (<1))
-Fraction of days with tone_{t-1} < 0 (d1 = 1): 0.481
+Log-likelihood : -5982.4997
+AIC            :  11974.9994
+BIC            :  12004.6234
+alpha + beta   :  0.9866   (stationary (<1))
+Fraction of days with tone_{t-1} < 0 (d1 = 1): 0.390
 
 Verdict:
-  omega         t = +2.55   p = 0.0108   -> SIGNIFICANT at 5% (and 10%) only
-  alpha         t = +5.68   p = 0.0000   -> SIGNIFICANT at 1% (and 5%, 10%)
-  beta          t = +49.72   p = 0.0000   -> SIGNIFICANT at 1% (and 5%, 10%)
-  gamma         t = -0.23   p = 0.8201   -> not significant
-  theta         t = +0.07   p = 0.9411   -> not significant
+  omega         t = +2.82   p = 0.0048   -> SIGNIFICANT at 1% (and 5%, 10%)
+  alpha         t = +5.61   p = 0.0000   -> SIGNIFICANT at 1% (and 5%, 10%)
+  beta          t = +49.47   p = 0.0000   -> SIGNIFICANT at 1% (and 5%, 10%)
+  gamma         t = -0.19   p = 0.8527   -> not significant
+  theta         t = +0.07   p = 0.9472   -> not significant
 
 ------------------------------------------------------------------------------
 GARCHAND (log article growth)
@@ -122,22 +122,22 @@ Sample after alignment: T = 2765 obs (2015-04-02 -> 2026-03-31)
 
 Per-parameter significance (|t| > 1.645 -> 10%, |t| > 1.96 -> 5%, |t| > 2.576 -> 1%):
        estimate  std_err  t_ratio  p_value  significant_10pct  significant_5pct  significant_1pct
-omega    0.0730   0.0356   2.0533   0.0400               True              True             False
-alpha    0.0903   0.0159   5.6646   0.0000               True              True              True
-beta     0.8964   0.0181  49.4520   0.0000               True              True              True
-gamma    0.0521   0.0736   0.7077   0.4791              False             False             False
+omega    0.0805   0.0369   2.1798   0.0293               True              True             False
+alpha    0.0903   0.0159   5.6691   0.0000               True              True              True
+beta     0.8964   0.0181  49.4928   0.0000               True              True              True
+gamma    0.0272   0.0936   0.2904   0.7715              False             False             False
 
-Log-likelihood : -5982.0589
-AIC            :  11972.1179
-BIC            :  11995.8171
-alpha + beta   :  0.9867   (stationary (<1))
-Fraction of days with log_art_growth_{t-1} > 0 (d2 = 1): 0.476
+Log-likelihood : -5982.4728
+AIC            :  11972.9457
+BIC            :  11996.6449
+alpha + beta   :  0.9866   (stationary (<1))
+Fraction of days with log_art_growth_{t-1} > 0 (d2 = 1): 0.473
 
 Verdict:
-  omega         t = +2.05   p = 0.0400   -> SIGNIFICANT at 5% (and 10%) only
-  alpha         t = +5.66   p = 0.0000   -> SIGNIFICANT at 1% (and 5%, 10%)
-  beta          t = +49.45   p = 0.0000   -> SIGNIFICANT at 1% (and 5%, 10%)
-  gamma         t = +0.71   p = 0.4791   -> not significant
+  omega         t = +2.18   p = 0.0293   -> SIGNIFICANT at 5% (and 10%) only
+  alpha         t = +5.67   p = 0.0000   -> SIGNIFICANT at 1% (and 5%, 10%)
+  beta          t = +49.49   p = 0.0000   -> SIGNIFICANT at 1% (and 5%, 10%)
+  gamma         t = +0.29   p = 0.7715   -> not significant
 
 ------------------------------------------------------------------------------
 GARCHND (tone, log_art_growth)
@@ -151,87 +151,87 @@ Sample: T = 2765 obs (2015-04-02 -> 2026-03-31)  kappa = 3.5714
 
 Per-parameter significance (|t| > 1.645 -> 10%, |t| > 1.96 -> 5%, |t| > 2.576 -> 1%):
        estimate  std_err  t_ratio  p_value  significant_10pct  significant_5pct  significant_1pct
-omega    0.0967   0.0247   3.9157   0.0001               True              True              True
-alpha    0.0888   0.0101   8.7465   0.0000               True              True              True
-beta     0.8891   0.0139  63.7458   0.0000               True              True              True
-gamma    0.0375   0.0342   1.0965   0.2729              False             False             False
+omega    0.0929   0.0332   2.8029   0.0051               True              True              True
+alpha    0.0908   0.0173   5.2433   0.0000               True              True              True
+beta     0.8920   0.0208  42.9489   0.0000               True              True              True
+gamma    0.0213   0.0239   0.8914   0.3727              False             False             False
 
-Log-likelihood : -5979.6159
-AIC            :  11967.2319
-BIC            :  11990.9311
-alpha + beta   :  0.9779   (stationary (<1))
+Log-likelihood : -5982.0113
+AIC            :  11972.0227
+BIC            :  11995.7219
+alpha + beta   :  0.9828   (stationary (<1))
 d3 active in-sample (sigma^2_{t-1} >= kappa): 0.616
 
 Verdict:
-  omega         t = +3.92   p = 0.0001   -> SIGNIFICANT at 1% (and 5%, 10%)
-  alpha         t = +8.75   p = 0.0000   -> SIGNIFICANT at 1% (and 5%, 10%)
-  beta          t = +63.75   p = 0.0000   -> SIGNIFICANT at 1% (and 5%, 10%)
-  gamma         t = +1.10   p = 0.2729   -> not significant
+  omega         t = +2.80   p = 0.0051   -> SIGNIFICANT at 1% (and 5%, 10%)
+  alpha         t = +5.24   p = 0.0000   -> SIGNIFICANT at 1% (and 5%, 10%)
+  beta          t = +42.95   p = 0.0000   -> SIGNIFICANT at 1% (and 5%, 10%)
+  gamma         t = +0.89   p = 0.3727   -> not significant
 
 ---- GARCHND  x = Tone             kappa = 50% annual ----
 Sample: T = 2765 obs (2015-04-02 -> 2026-03-31)  kappa = 9.9206
 
 Per-parameter significance (|t| > 1.645 -> 10%, |t| > 1.96 -> 5%, |t| > 2.576 -> 1%):
        estimate  std_err   t_ratio  p_value  significant_10pct  significant_5pct  significant_1pct
-omega    0.0532   0.0115    4.6104   0.0000               True              True              True
-alpha    0.0872   0.0027   32.6900   0.0000               True              True              True
-beta     0.9101   0.0032  287.2016   0.0000               True              True              True
-gamma   -0.4811   0.0227  -21.2193   0.0000               True              True              True
+omega    0.0412   0.0243    1.6921   0.0906               True             False             False
+alpha    0.0845   0.0077   11.0197   0.0000               True              True              True
+beta     0.9162   0.0086  106.8527   0.0000               True              True              True
+gamma   -1.2195   0.1779   -6.8566   0.0000               True              True              True
 
-Log-likelihood : -5977.0528
-AIC            :  11962.1055
-BIC            :  11985.8047
-alpha + beta   :  0.9973   (stationary (<1))
-d3 active in-sample (sigma^2_{t-1} >= kappa): 0.072
+Log-likelihood : -5973.4457
+AIC            :  11954.8915
+BIC            :  11978.5907
+alpha + beta   :  1.0008   (non-stationary (>=1))
+d3 active in-sample (sigma^2_{t-1} >= kappa): 0.059
 
 Verdict:
-  omega         t = +4.61   p = 0.0000   -> SIGNIFICANT at 1% (and 5%, 10%)
-  alpha         t = +32.69   p = 0.0000   -> SIGNIFICANT at 1% (and 5%, 10%)
-  beta          t = +287.20   p = 0.0000   -> SIGNIFICANT at 1% (and 5%, 10%)
-  gamma         t = -21.22   p = 0.0000   -> SIGNIFICANT at 1% (and 5%, 10%)
+  omega         t = +1.69   p = 0.0906   -> SIGNIFICANT at 10% only
+  alpha         t = +11.02   p = 0.0000   -> SIGNIFICANT at 1% (and 5%, 10%)
+  beta          t = +106.85   p = 0.0000   -> SIGNIFICANT at 1% (and 5%, 10%)
+  gamma         t = -6.86   p = 0.0000   -> SIGNIFICANT at 1% (and 5%, 10%)
 
 ---- GARCHND  x = log_art_growth   kappa = 30% annual ----
 Sample: T = 2765 obs (2015-04-02 -> 2026-03-31)  kappa = 3.5714
 
 Per-parameter significance (|t| > 1.645 -> 10%, |t| > 1.96 -> 5%, |t| > 2.576 -> 1%):
        estimate  std_err  t_ratio  p_value  significant_10pct  significant_5pct  significant_1pct
-omega    0.1088   0.0216   5.0458   0.0000               True              True              True
-alpha    0.0945   0.0309   3.0598   0.0022               True              True              True
-beta     0.8795   0.0116  75.8273   0.0000               True              True              True
-gamma    0.1299   0.4061   0.3200   0.7490              False             False             False
+omega    0.1093   0.0329   3.3242   0.0009               True              True              True
+alpha    0.0872   0.0117   7.4328   0.0000               True              True              True
+beta     0.8818   0.0218  40.4393   0.0000               True              True              True
+gamma    0.2302   0.1017   2.2641   0.0236               True              True             False
 
-Log-likelihood : -5979.8694
-AIC            :  11967.7387
-BIC            :  11991.4379
-alpha + beta   :  0.9740   (stationary (<1))
-d3 active in-sample (sigma^2_{t-1} >= kappa): 0.621
+Log-likelihood : -5979.0497
+AIC            :  11966.0994
+BIC            :  11989.7986
+alpha + beta   :  0.9690   (stationary (<1))
+d3 active in-sample (sigma^2_{t-1} >= kappa): 0.634
 
 Verdict:
-  omega         t = +5.05   p = 0.0000   -> SIGNIFICANT at 1% (and 5%, 10%)
-  alpha         t = +3.06   p = 0.0022   -> SIGNIFICANT at 1% (and 5%, 10%)
-  beta          t = +75.83   p = 0.0000   -> SIGNIFICANT at 1% (and 5%, 10%)
-  gamma         t = +0.32   p = 0.7490   -> not significant
+  omega         t = +3.32   p = 0.0009   -> SIGNIFICANT at 1% (and 5%, 10%)
+  alpha         t = +7.43   p = 0.0000   -> SIGNIFICANT at 1% (and 5%, 10%)
+  beta          t = +40.44   p = 0.0000   -> SIGNIFICANT at 1% (and 5%, 10%)
+  gamma         t = +2.26   p = 0.0236   -> SIGNIFICANT at 5% (and 10%) only
 
 ---- GARCHND  x = log_art_growth   kappa = 50% annual ----
 Sample: T = 2765 obs (2015-04-02 -> 2026-03-31)  kappa = 9.9206
 
 Per-parameter significance (|t| > 1.645 -> 10%, |t| > 1.96 -> 5%, |t| > 2.576 -> 1%):
-       estimate  std_err    t_ratio  p_value  significant_10pct  significant_5pct  significant_1pct
-omega    0.0551   0.0134     4.1159   0.0000               True              True              True
-alpha    0.0901   0.0014    65.0193   0.0000               True              True              True
-beta     0.9077   0.0003  2997.4667   0.0000               True              True              True
-gamma   -1.6273   0.0741   -21.9478   0.0000               True              True              True
+       estimate  std_err  t_ratio  p_value  significant_10pct  significant_5pct  significant_1pct
+omega    0.0565   0.0317   1.7793   0.0752               True             False             False
+alpha    0.0927   0.0093   9.9933   0.0000               True              True              True
+beta     0.9051   0.0166  54.4964   0.0000               True              True              True
+gamma   -1.2088   0.1894  -6.3837   0.0000               True              True              True
 
-Log-likelihood : -5975.4760
-AIC            :  11958.9520
-BIC            :  11982.6512
-alpha + beta   :  0.9978   (stationary (<1))
-d3 active in-sample (sigma^2_{t-1} >= kappa): 0.066
+Log-likelihood : -5979.0803
+AIC            :  11966.1606
+BIC            :  11989.8598
+alpha + beta   :  0.9977   (stationary (<1))
+d3 active in-sample (sigma^2_{t-1} >= kappa): 0.075
 
 Verdict:
-  omega         t = +4.12   p = 0.0000   -> SIGNIFICANT at 1% (and 5%, 10%)
-  alpha         t = +65.02   p = 0.0000   -> SIGNIFICANT at 1% (and 5%, 10%)
-  beta          t = +2997.47   p = 0.0000   -> SIGNIFICANT at 1% (and 5%, 10%)
-  gamma         t = -21.95   p = 0.0000   -> SIGNIFICANT at 1% (and 5%, 10%)
+  omega         t = +1.78   p = 0.0752   -> SIGNIFICANT at 10% only
+  alpha         t = +9.99   p = 0.0000   -> SIGNIFICANT at 1% (and 5%, 10%)
+  beta          t = +54.50   p = 0.0000   -> SIGNIFICANT at 1% (and 5%, 10%)
+  gamma         t = -6.38   p = 0.0000   -> SIGNIFICANT at 1% (and 5%, 10%)
 
 
