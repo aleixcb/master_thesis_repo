@@ -204,42 +204,126 @@ MODELS: List[Dict] = [
 
 # [Model, Proxy, h, HRMSE, QLIKE, RMSE, MAE, N]
 OOS_LOSS = [
-    ["GARCH(1,1)",       "Parkinson",       "1",   "5.4023", "2.0760", "4.8866", "3.9585", "813"],
-    ["GARCH(1,1)",       "Parkinson",       "5",   "2.9753", "2.0933", "4.4833", "3.7785", "809"],
-    ["GARCH(1,1)",       "Parkinson",      "22",   "2.6582", "2.1211", "4.1826", "3.6778", "792"],
-    ["GARCH(1,1)",       "Rogers-Satchell", "1",  "12.5808", "2.0617", "4.8178", "3.9280", "813"],
-    ["GARCH(1,1)",       "Rogers-Satchell", "5",   "2.9436", "2.0791", "4.3905", "3.7677", "809"],
-    ["GARCH(1,1)",       "Rogers-Satchell","22",   "2.6068", "2.1039", "4.1738", "3.6484", "792"],
-    ["GARCHND tone",     "Parkinson",       "1",   "5.3128", "2.0730", "4.7686", "3.9090", "813"],
-    ["GARCHND tone",     "Parkinson",       "5",   "2.9460", "2.0928", "4.3911", "3.7591", "809"],
-    ["GARCHND tone",     "Parkinson",      "22",   "2.7032", "2.1348", "4.2540", "3.7962", "792"],
-    ["GARCHND tone",     "Rogers-Satchell", "1",  "12.5734", "2.0580", "4.6975", "3.8701", "813"],
-    ["GARCHND tone",     "Rogers-Satchell", "5",   "2.9023", "2.0779", "4.2912", "3.7452", "809"],
-    ["GARCHND tone",     "Rogers-Satchell","22",   "2.6578", "2.1174", "4.2456", "3.7671", "792"],
-    ["GARCHND log_artg", "Parkinson",       "1",   "5.3400", "2.0750", "4.7698", "3.9104", "813"],
-    ["GARCHND log_artg", "Parkinson",       "5",   "2.9620", "2.0949", "4.4162", "3.7639", "809"],
-    ["GARCHND log_artg", "Parkinson",      "22",   "2.6966", "2.1361", "4.3428", "3.8460", "792"],
-    ["GARCHND log_artg", "Rogers-Satchell", "1",  "12.4528", "2.0599", "4.6937", "3.8731", "813"],
-    ["GARCHND log_artg", "Rogers-Satchell", "5",   "2.9226", "2.0799", "4.3137", "3.7527", "809"],
-    ["GARCHND log_artg", "Rogers-Satchell","22",   "2.6487", "2.1187", "4.3356", "3.8295", "792"],
+    ["GARCH(1,1)",            "Parkinson",       "1",   "5.4023", "2.0760", "4.8866", "3.9585", "813"],
+    ["GARCH(1,1)",            "Parkinson",       "5",   "2.9753", "2.0933", "4.4833", "3.7785", "809"],
+    ["GARCH(1,1)",            "Parkinson",      "22",   "2.6582", "2.1211", "4.1826", "3.6778", "792"],
+    ["GARCH(1,1)",            "Rogers-Satchell", "1",  "12.5808", "2.0617", "4.8178", "3.9280", "813"],
+    ["GARCH(1,1)",            "Rogers-Satchell", "5",   "2.9436", "2.0791", "4.3905", "3.7677", "809"],
+    ["GARCH(1,1)",            "Rogers-Satchell","22",   "2.6068", "2.1039", "4.1738", "3.6484", "792"],
+    ["GARCH-X tone",          "Parkinson",       "1",   "5.4271", "2.0793", "4.9458", "4.0022", "813"],
+    ["GARCH-X tone",          "Parkinson",       "5",   "2.9987", "2.0971", "4.5588", "3.8321", "809"],
+    ["GARCH-X tone",          "Parkinson",      "22",   "2.6664", "2.1250", "4.2746", "3.7617", "792"],
+    ["GARCH-X tone",          "Rogers-Satchell", "1",  "12.6381", "2.0646", "4.8757", "3.9737", "813"],
+    ["GARCH-X tone",          "Rogers-Satchell", "5",   "2.9624", "2.0825", "4.4649", "3.8186", "809"],
+    ["GARCH-X tone",          "Rogers-Satchell","22",   "2.6122", "2.1073", "4.2596", "3.7338", "792"],
+    ["GARCH-X log_artg",      "Parkinson",       "1",   "5.4685", "2.0832", "4.9566", "4.0203", "813"],
+    ["GARCH-X log_artg",      "Parkinson",       "5",   "3.0431", "2.1041", "4.5634", "3.8583", "809"],
+    ["GARCH-X log_artg",      "Parkinson",      "22",   "2.8084", "2.1412", "4.3044", "3.8024", "792"],
+    ["GARCH-X log_artg",      "Rogers-Satchell", "1",  "12.8300", "2.0684", "4.8846", "3.9919", "813"],
+    ["GARCH-X log_artg",      "Rogers-Satchell", "5",   "3.0172", "2.0895", "4.4682", "3.8420", "809"],
+    ["GARCH-X log_artg",      "Rogers-Satchell","22",   "2.7595", "2.1235", "4.2922", "3.7602", "792"],
+    ["GARCHAND tone",         "Parkinson",       "1",   "5.6238", "2.1006", "5.0643", "4.1395", "813"],
+    ["GARCHAND tone",         "Parkinson",       "5",   "3.0913", "2.1121", "4.6541", "3.9394", "809"],
+    ["GARCHAND tone",         "Parkinson",      "22",   "2.6320", "2.1167", "4.2332", "3.6960", "792"],
+    ["GARCHAND tone",         "Rogers-Satchell", "1",  "14.5021", "2.0868", "4.9992", "4.1233", "813"],
+    ["GARCHAND tone",         "Rogers-Satchell", "5",   "3.0861", "2.0983", "4.5657", "3.9263", "809"],
+    ["GARCHAND tone",         "Rogers-Satchell","22",   "2.5894", "2.0994", "4.2198", "3.6645", "792"],
+    ["GARCHAND log_artg",     "Parkinson",       "1",   "5.4361", "2.0799", "4.9393", "3.9990", "813"],
+    ["GARCHAND log_artg",     "Parkinson",       "5",   "3.0202", "2.0993", "4.5381", "3.8200", "809"],
+    ["GARCHAND log_artg",     "Parkinson",      "22",   "2.7417", "2.1279", "4.2219", "3.7027", "792"],
+    ["GARCHAND log_artg",     "Rogers-Satchell", "1",  "12.6889", "2.0653", "4.8685", "3.9704", "813"],
+    ["GARCHAND log_artg",     "Rogers-Satchell", "5",   "2.9907", "2.0848", "4.4437", "3.8048", "809"],
+    ["GARCHAND log_artg",     "Rogers-Satchell","22",   "2.6878", "2.1103", "4.2095", "3.6630", "792"],
+    ["GARCHND κ=30% tone",    "Parkinson",       "1",   "5.4311", "2.0787", "4.9183", "3.9863", "813"],
+    ["GARCHND κ=30% tone",    "Parkinson",       "5",   "2.9983", "2.0970", "4.5302", "3.8153", "809"],
+    ["GARCHND κ=30% tone",    "Parkinson",      "22",   "2.6775", "2.1271", "4.2534", "3.7571", "792"],
+    ["GARCHND κ=30% tone",    "Rogers-Satchell", "1",  "12.6402", "2.0639", "4.8479", "3.9530", "813"],
+    ["GARCHND κ=30% tone",    "Rogers-Satchell", "5",   "2.9653", "2.0825", "4.4361", "3.8023", "809"],
+    ["GARCHND κ=30% tone",    "Rogers-Satchell","22",   "2.6262", "2.1093", "4.2392", "3.7267", "792"],
+    ["GARCHND κ=30% log_artg","Parkinson",       "1",   "5.4728", "2.0808", "4.9281", "3.9974", "813"],
+    ["GARCHND κ=30% log_artg","Parkinson",       "5",   "3.0606", "2.1033", "4.5380", "3.8333", "809"],
+    ["GARCHND κ=30% log_artg","Parkinson",      "22",   "2.8800", "2.1401", "4.3128", "3.7856", "792"],
+    ["GARCHND κ=30% log_artg","Rogers-Satchell", "1",  "12.7754", "2.0670", "4.8603", "3.9673", "813"],
+    ["GARCHND κ=30% log_artg","Rogers-Satchell", "5",   "3.0416", "2.0901", "4.4502", "3.8278", "809"],
+    ["GARCHND κ=30% log_artg","Rogers-Satchell","22",   "2.8225", "2.1244", "4.3106", "3.7493", "792"],
+    ["GARCHND κ=50% tone",    "Parkinson",       "1",   "5.0987", "2.0599", "4.6817", "3.8280", "813"],
+    ["GARCHND κ=50% tone",    "Parkinson",       "5",   "2.8735", "2.0820", "4.3645", "3.7098", "809"],
+    ["GARCHND κ=50% tone",    "Parkinson",      "22",   "2.7304", "2.1394", "4.5071", "3.9632", "792"],
+    ["GARCHND κ=50% tone",    "Rogers-Satchell", "1",  "12.1220", "2.0447", "4.6146", "3.7828", "813"],
+    ["GARCHND κ=50% tone",    "Rogers-Satchell", "5",   "2.8209", "2.0673", "4.2739", "3.7039", "809"],
+    ["GARCHND κ=50% tone",    "Rogers-Satchell","22",   "2.6711", "2.1221", "4.4999", "3.9479", "792"],
+    ["GARCHND κ=50% log_artg","Parkinson",       "1",   "5.2228", "2.0639", "4.5829", "3.7801", "813"],
+    ["GARCHND κ=50% log_artg","Parkinson",       "5",   "2.8647", "2.0817", "4.1814", "3.6072", "809"],
+    ["GARCHND κ=50% log_artg","Parkinson",      "22",   "2.5875", "2.1172", "4.0473", "3.6191", "792"],
+    ["GARCHND κ=50% log_artg","Rogers-Satchell", "1",  "12.4078", "2.0485", "4.4993", "3.7318", "813"],
+    ["GARCHND κ=50% log_artg","Rogers-Satchell", "5",   "2.8427", "2.0666", "4.0714", "3.5971", "809"],
+    ["GARCHND κ=50% log_artg","Rogers-Satchell","22",   "2.5565", "2.0995", "4.0380", "3.5954", "792"],
+    ["EGARCH-X",              "Parkinson",       "1",   "5.6122", "2.1150", "4.9407", "4.1347", "813"],
+    ["EGARCH-X",              "Parkinson",       "5",   "3.0832", "2.1221", "4.4406", "3.8878", "809"],
+    ["EGARCH-X",              "Parkinson",      "22",   "2.5222", "2.1166", "3.9003", "3.5732", "792"],
+    ["EGARCH-X",              "Rogers-Satchell", "1",  "15.0765", "2.0988", "4.8522", "4.0859", "813"],
+    ["EGARCH-X",              "Rogers-Satchell", "5",   "3.1362", "2.1060", "4.3254", "3.8659", "809"],
+    ["EGARCH-X",              "Rogers-Satchell","22",   "2.5188", "2.0984", "3.8857", "3.5367", "792"],
 ]
 
 # DM (two-sided) and Clark-West (one-sided) vs GARCH(1,1) Student-t baseline.
 # DM > 0 ⇒ candidate has lower MSE; CW > 0 ⇒ candidate adds predictive content vs nested baseline.
 # [Candidate, Proxy, h, DM, DM_p, CW, CW_p]
 OOS_DM_CW = [
-    ["GARCHND tone",     "Parkinson",       "1",  "+5.332", "0.0000", "+5.695", "0.0000"],
-    ["GARCHND tone",     "Parkinson",       "5",  "+2.071", "0.0383", "+2.293", "0.0109"],
-    ["GARCHND tone",     "Parkinson",      "22",  "−0.988", "0.3230", "−0.699", "0.7577"],
-    ["GARCHND tone",     "Rogers-Satchell", "1",  "+5.449", "0.0000", "+5.816", "0.0000"],
-    ["GARCHND tone",     "Rogers-Satchell", "5",  "+2.120", "0.0340", "+2.332", "0.0098"],
-    ["GARCHND tone",     "Rogers-Satchell","22",  "−0.973", "0.3305", "−0.690", "0.7549"],
-    ["GARCHND log_artg", "Parkinson",       "1",  "+3.814", "0.0001", "+4.350", "0.0000"],
-    ["GARCHND log_artg", "Parkinson",       "5",  "+1.195", "0.2323", "+1.544", "0.0612"],
-    ["GARCHND log_artg", "Parkinson",      "22",  "−2.097", "0.0360", "−1.790", "0.9633"],
-    ["GARCHND log_artg", "Rogers-Satchell", "1",  "+4.191", "0.0000", "+4.695", "0.0000"],
-    ["GARCHND log_artg", "Rogers-Satchell", "5",  "+1.310", "0.1903", "+1.641", "0.0504"],
-    ["GARCHND log_artg", "Rogers-Satchell","22",  "−2.065", "0.0389", "−1.768", "0.9615"],
+    ["GARCH-X tone",          "Parkinson",       "1",   "−7.883", "0.0000", "−7.768", "1.0000"],
+    ["GARCH-X tone",          "Parkinson",       "5",   "−4.738", "0.0000", "−4.690", "1.0000"],
+    ["GARCH-X tone",          "Parkinson",      "22",   "−2.061", "0.0393", "−2.022", "0.9784"],
+    ["GARCH-X tone",          "Rogers-Satchell", "1",   "−7.647", "0.0000", "−7.510", "1.0000"],
+    ["GARCH-X tone",          "Rogers-Satchell", "5",   "−4.569", "0.0000", "−4.503", "1.0000"],
+    ["GARCH-X tone",          "Rogers-Satchell","22",   "−2.048", "0.0405", "−1.996", "0.9770"],
+    ["GARCH-X log_artg",      "Parkinson",       "1",   "−6.321", "0.0000", "−5.960", "1.0000"],
+    ["GARCH-X log_artg",      "Parkinson",       "5",   "−3.891", "0.0001", "−3.664", "0.9999"],
+    ["GARCH-X log_artg",      "Parkinson",      "22",   "−2.203", "0.0276", "−1.929", "0.9731"],
+    ["GARCH-X log_artg",      "Rogers-Satchell", "1",   "−5.862", "0.0000", "−5.479", "1.0000"],
+    ["GARCH-X log_artg",      "Rogers-Satchell", "5",   "−3.689", "0.0002", "−3.450", "0.9997"],
+    ["GARCH-X log_artg",      "Rogers-Satchell","22",   "−2.135", "0.0328", "−1.856", "0.9683"],
+    ["GARCHAND tone",         "Parkinson",       "1",  "−12.523", "0.0000","−11.809", "1.0000"],
+    ["GARCHAND tone",         "Parkinson",       "5",   "−5.973", "0.0000", "−5.555", "1.0000"],
+    ["GARCHAND tone",         "Parkinson",      "22",   "−0.823", "0.4103", "−0.397", "0.6542"],
+    ["GARCHAND tone",         "Rogers-Satchell", "1",  "−12.691", "0.0000","−11.987", "1.0000"],
+    ["GARCHAND tone",         "Rogers-Satchell", "5",   "−5.956", "0.0000", "−5.540", "1.0000"],
+    ["GARCHAND tone",         "Rogers-Satchell","22",   "−0.785", "0.4323", "−0.335", "0.6312"],
+    ["GARCHAND log_artg",     "Parkinson",       "1",   "−4.534", "0.0000", "−4.098", "1.0000"],
+    ["GARCHAND log_artg",     "Parkinson",       "5",   "−2.687", "0.0072", "−2.457", "0.9930"],
+    ["GARCHAND log_artg",     "Parkinson",      "22",   "−0.922", "0.3565", "−0.640", "0.7388"],
+    ["GARCHAND log_artg",     "Rogers-Satchell", "1",   "−4.221", "0.0000", "−3.776", "0.9999"],
+    ["GARCHAND log_artg",     "Rogers-Satchell", "5",   "−2.521", "0.0117", "−2.285", "0.9888"],
+    ["GARCHAND log_artg",     "Rogers-Satchell","22",   "−0.834", "0.4045", "−0.552", "0.7095"],
+    ["GARCHND κ=30% tone",    "Parkinson",       "1",   "−4.436", "0.0000", "−4.211", "1.0000"],
+    ["GARCHND κ=30% tone",    "Parkinson",       "5",   "−3.798", "0.0001", "−3.723", "0.9999"],
+    ["GARCHND κ=30% tone",    "Parkinson",      "22",   "−2.770", "0.0056", "−2.804", "0.9975"],
+    ["GARCHND κ=30% tone",    "Rogers-Satchell", "1",   "−4.236", "0.0000", "−3.999", "1.0000"],
+    ["GARCHND κ=30% tone",    "Rogers-Satchell", "5",   "−3.644", "0.0003", "−3.558", "0.9998"],
+    ["GARCHND κ=30% tone",    "Rogers-Satchell","22",   "−2.751", "0.0059", "−2.772", "0.9972"],
+    ["GARCHND κ=30% log_artg","Parkinson",       "1",   "−3.152", "0.0016", "−2.351", "0.9906"],
+    ["GARCHND κ=30% log_artg","Parkinson",       "5",   "−1.996", "0.0459", "−1.580", "0.9430"],
+    ["GARCHND κ=30% log_artg","Parkinson",      "22",   "−1.376", "0.1690", "−1.059", "0.8552"],
+    ["GARCHND κ=30% log_artg","Rogers-Satchell", "1",   "−3.283", "0.0010", "−2.454", "0.9929"],
+    ["GARCHND κ=30% log_artg","Rogers-Satchell", "5",   "−2.123", "0.0338", "−1.717", "0.9570"],
+    ["GARCHND κ=30% log_artg","Rogers-Satchell","22",   "−1.422", "0.1551", "−1.112", "0.8670"],
+    ["GARCHND κ=50% tone",    "Parkinson",       "1",   "+4.102", "0.0000", "+4.792", "0.0000"],
+    ["GARCHND κ=50% tone",    "Parkinson",       "5",   "+1.228", "0.2193", "+1.813", "0.0349"],
+    ["GARCHND κ=50% tone",    "Parkinson",      "22",   "−2.336", "0.0195", "−1.057", "0.8547"],
+    ["GARCHND κ=50% tone",    "Rogers-Satchell", "1",   "+4.118", "0.0000", "+4.800", "0.0000"],
+    ["GARCHND κ=50% tone",    "Rogers-Satchell", "5",   "+1.150", "0.2501", "+1.750", "0.0401"],
+    ["GARCHND κ=50% tone",    "Rogers-Satchell","22",   "−2.370", "0.0178", "−1.073", "0.8583"],
+    ["GARCHND κ=50% log_artg","Parkinson",       "1",   "+6.775", "0.0000", "+7.009", "0.0000"],
+    ["GARCHND κ=50% log_artg","Parkinson",       "5",   "+3.300", "0.0010", "+3.342", "0.0004"],
+    ["GARCHND κ=50% log_artg","Parkinson",      "22",   "+0.996", "0.3195", "+1.157", "0.1237"],
+    ["GARCHND κ=50% log_artg","Rogers-Satchell", "1",   "+7.088", "0.0000", "+7.261", "0.0000"],
+    ["GARCHND κ=50% log_artg","Rogers-Satchell", "5",   "+3.300", "0.0010", "+3.341", "0.0004"],
+    ["GARCHND κ=50% log_artg","Rogers-Satchell","22",   "+0.983", "0.3254", "+1.144", "0.1264"],
+    ["EGARCH-X",              "Parkinson",       "1",   "−1.048", "0.2948", "+0.967", "0.1668"],
+    ["EGARCH-X",              "Parkinson",       "5",   "+0.423", "0.6724", "+1.312", "0.0948"],
+    ["EGARCH-X",              "Parkinson",      "22",   "+1.608", "0.1078", "+1.839", "0.0330"],
+    ["EGARCH-X",              "Rogers-Satchell", "1",   "−0.657", "0.5111", "+1.334", "0.0912"],
+    ["EGARCH-X",              "Rogers-Satchell", "5",   "+0.614", "0.5392", "+1.454", "0.0730"],
+    ["EGARCH-X",              "Rogers-Satchell","22",   "+1.601", "0.1093", "+1.827", "0.0339"],
 ]
 
 # Check 2 — Placebo (notebook 06, cell 8)
@@ -267,72 +351,72 @@ PLACEBO_ARTG = [
 # Check 3 — SE stability across sigmoid sharpness K (notebook 06, cell 10)
 STABILITY_TONE = [
     # [K, LL, gamma, SE(gamma), t(gamma), converged]
-    ["K=5",      "-5952.63", "-0.3626", "0.0737",  "-4.92", "True"],
-    ["K=10",     "-5952.42", "-0.3769", "0.0740",  "-5.09", "True"],
-    ["K=20",     "-5951.97", "-0.8262", "0.0602", "-13.72", "True"],
-    ["K=50",     "-5952.16", "-0.3880", "0.0008", "-468.3", "True"],
-    ["hard d3",  "-5953.24", "-0.3191", "0.0989",  "-3.23", "True"],
+    ["K=5",      "-5950.65", "-1.0209", "0.1238",    "-8.24", "True"],
+    ["K=10",     "-5950.57", "-1.0253", "0.1020",   "-10.05", "True"],
+    ["K=20",     "-5950.47", "-1.0966", "0.1445",    "-7.59", "True"],
+    ["K=50",     "-5950.59", "-0.9086", "0.0248",   "-36.65", "True"],
+    ["hard d3",  "-5954.05", "-0.2857", "0.0001", "-2318.55", "True"],
 ]
 
 STABILITY_ARTG = [
-    ["K=5",      "-5951.98", "-1.3781", "0.2739",  "-5.03", "True"],
-    ["K=10",     "-5952.01", "-1.0979", "0.2493",  "-4.40", "True"],
-    ["K=20",     "-5951.25", "-1.4116", "0.2184",  "-6.46", "True"],
-    ["K=50",     "-5951.42", "-1.1276", "0.0405", "-27.81", "True"],
-    ["hard d3",  "-5951.52", "-1.0767", "0.0029", "-370.8", "True"],
+    ["K=5",      "-5954.08", "-1.1225", "0.3712",    "-3.02", "True"],
+    ["K=10",     "-5954.01", "-1.1592", "0.1874",    "-6.19", "True"],
+    ["K=20",     "-5954.03", "-0.9972", "0.1635",    "-6.10", "True"],
+    ["K=50",     "-5953.87", "-1.2235", "0.0888",   "-13.78", "True"],
+    ["hard d3",  "-5955.11", "-0.4223", "0.0001", "-6100.89", "True"],
 ]
 
 # Check 4 — Cluster count (notebook 06, cell 12)
 CLUSTERS_TONE = [
-    ["1", "2021-02-10", "2021-04-01", "36"],
-    ["2", "2020-03-11", "2020-04-14", "24"],
-    ["3", "2025-10-15", "2025-11-12", "21"],
-    ["4", "2026-03-05", "2026-03-30", "18"],
-    ["5", "2026-02-03", "2026-02-19", "12"],
-    ["6", "2025-04-11", "2025-04-23",  "8"],
-    ["7", "2018-12-24", "2019-01-02",  "6"],
-    ["8", "2022-11-08", "2022-11-15",  "6"],
-    ["9", "2024-09-30", "2024-10-01",  "2"],
-    ["10","2021-01-11", "2021-01-11",  "1"],
+    ["1", "2021-02-10", "2021-04-05", "37"],
+    ["2", "2020-03-11", "2020-04-21", "29"],
+    ["3", "2025-10-15", "2025-11-13", "22"],
+    ["4", "2026-02-03", "2026-02-18", "11"],
+    ["5", "2018-12-24", "2019-01-02",  "6"],
+    ["6", "2022-11-08", "2022-11-15",  "6"],
+    ["7", "2025-04-11", "2025-04-17",  "5"],
+    ["8", "2026-03-05", "2026-03-11",  "5"],
+    ["9", "2026-03-25", "2026-03-30",  "4"],
+    ["10","2021-01-11", "2021-01-13",  "3"],
 ]
 
 CLUSTERS_ARTG = [
-    ["1", "2020-03-04", "2020-04-17", "32"],
-    ["2", "2021-01-07", "2021-02-18", "29"],
-    ["3", "2021-03-01", "2021-04-01", "24"],
-    ["4", "2025-10-15", "2025-10-29", "11"],
-    ["5", "2024-09-30", "2024-10-11", "10"],
-    ["6", "2026-02-03", "2026-02-17", "10"],
-    ["7", "2022-05-11", "2022-05-23",  "9"],
-    ["8", "2018-12-24", "2019-01-03",  "7"],
-    ["9", "2025-04-11", "2025-04-22",  "7"],
-    ["10","2026-03-24", "2026-03-31",  "6"],
+    ["1", "2021-02-04", "2021-03-29", "37"],
+    ["2", "2020-03-04", "2020-04-23", "36"],
+    ["3", "2025-10-15", "2025-11-12", "21"],
+    ["4", "2026-03-05", "2026-03-31", "19"],
+    ["5", "2024-09-30", "2024-10-14", "11"],
+    ["6", "2026-02-03", "2026-02-18", "11"],
+    ["7", "2018-12-24", "2019-01-08", "10"],
+    ["8", "2025-04-11", "2025-04-22",  "7"],
+    ["9", "2022-11-08", "2022-11-14",  "5"],
+    ["10","2021-01-07", "2021-01-12",  "4"],
 ]
 
 # Check 5 — HAC/MBB SEs (notebook 07, cell 3)
 HAC_TONE = [
     # [Method, gamma, SE(gamma), t(gamma)]
-    ["iid sandwich", "-0.8262", "0.0602", "-13.72"],
-    ["HAC L=25",     "-0.8262", "0.0586", "-14.09"],
-    ["HAC L=50",     "-0.8262", "0.0548", "-15.07"],
-    ["HAC L=75",     "-0.8262", "0.0565", "-14.62"],
-    ["HAC L=100",    "-0.8262", "0.0578", "-14.30"],
-    ["MBB L=25",     "-0.8262", "0.0583", "-14.18"],
-    ["MBB L=50",     "-0.8262", "0.0563", "-14.68"],
-    ["MBB L=75",     "-0.8262", "0.0575", "-14.36"],
-    ["MBB L=100",    "-0.8262", "0.0596", "-13.87"],
+    ["iid sandwich", "-1.0966", "0.1445", "-7.59"],
+    ["HAC L=25",     "-1.0966", "0.1360", "-8.06"],
+    ["HAC L=50",     "-1.0966", "0.1400", "-7.83"],
+    ["HAC L=75",     "-1.0966", "0.1413", "-7.76"],
+    ["HAC L=100",    "-1.0966", "0.1411", "-7.77"],
+    ["MBB L=25",     "-1.0966", "0.1337", "-8.20"],
+    ["MBB L=50",     "-1.0966", "0.1416", "-7.74"],
+    ["MBB L=75",     "-1.0966", "0.1403", "-7.82"],
+    ["MBB L=100",    "-1.0966", "0.1448", "-7.57"],
 ]
 
 HAC_ARTG = [
-    ["iid sandwich", "-1.4116", "0.2184", "-6.46"],
-    ["HAC L=25",     "-1.4116", "0.2321", "-6.08"],
-    ["HAC L=50",     "-1.4116", "0.2424", "-5.82"],
-    ["HAC L=75",     "-1.4116", "0.2469", "-5.72"],
-    ["HAC L=100",    "-1.4116", "0.2473", "-5.71"],
-    ["MBB L=25",     "-1.4116", "0.2360", "-5.98"],
-    ["MBB L=50",     "-1.4116", "0.2455", "-5.75"],
-    ["MBB L=75",     "-1.4116", "0.2471", "-5.71"],
-    ["MBB L=100",    "-1.4116", "0.2503", "-5.64"],
+    ["iid sandwich", "-0.9972", "0.1635", "-6.10"],
+    ["HAC L=25",     "-0.9972", "0.1444", "-6.91"],
+    ["HAC L=50",     "-0.9972", "0.1421", "-7.02"],
+    ["HAC L=75",     "-0.9972", "0.1453", "-6.86"],
+    ["HAC L=100",    "-0.9972", "0.1458", "-6.84"],
+    ["MBB L=25",     "-0.9972", "0.1496", "-6.67"],
+    ["MBB L=50",     "-0.9972", "0.1469", "-6.79"],
+    ["MBB L=75",     "-0.9972", "0.1479", "-6.74"],
+    ["MBB L=100",    "-0.9972", "0.1489", "-6.69"],
 ]
 
 # Check 6 — GDELT coverage (notebook 07, cells 5–6)
@@ -598,7 +682,8 @@ def render_check1(story, styles):
     ))
     story.append(Paragraph(
         "Out-of-sample window: <b>2023-01-03 to 2026-03-31</b> (813 forecast origins). "
-        "Parameters are re-estimated <b>daily</b> on a <b>1,260-day rolling sample</b>. "
+        "Parameters are re-estimated <b>daily</b> on a <b>1,260-day rolling sample</b> for "
+        "every candidate model in the report (GARCH(1,1) baseline plus 9 augmented specs). "
         "The forecast at origin &tau; is the average of the iterated conditional-variance "
         "path &sigma;<sup>2</sup><sub>&tau;+1|&tau;</sub>,&hellip;,&sigma;<sup>2</sup><sub>&tau;+h|&tau;</sub>; "
         "the target is the corresponding h-day mean of the realised-variance proxy. "
@@ -617,7 +702,7 @@ def render_check1(story, styles):
         "Loss functions (averaged over the 813 origins)", styles["SubSection"],
     ))
     hdr = ["Model", "Proxy", "h", "HRMSE", "QLIKE", "RMSE", "MAE", "N"]
-    cw = [3.2 * cm, 2.8 * cm, 0.8 * cm, 1.7 * cm, 1.7 * cm, 1.7 * cm, 1.7 * cm, 1.0 * cm]
+    cw = [3.6 * cm, 2.6 * cm, 0.7 * cm, 1.7 * cm, 1.7 * cm, 1.7 * cm, 1.7 * cm, 0.9 * cm]
     story.append(_tbl([hdr] + OOS_LOSS, cw))
     story.append(Spacer(1, 8))
 
@@ -626,30 +711,38 @@ def render_check1(story, styles):
         styles["SubSection"],
     ))
     hdr2 = ["Candidate", "Proxy", "h", "DM", "DM p", "CW", "CW p"]
-    cw2 = [3.4 * cm, 2.8 * cm, 0.8 * cm, 2.0 * cm, 2.0 * cm, 2.0 * cm, 2.0 * cm]
+    cw2 = [3.8 * cm, 2.6 * cm, 0.7 * cm, 2.0 * cm, 2.0 * cm, 2.0 * cm, 2.0 * cm]
     story.append(_tbl([hdr2] + OOS_DM_CW, cw2))
 
     story.append(Paragraph(
-        "Verdict: the rolling-window evidence is markedly more favourable to the "
-        "GARCHND models than the static-split forecast we ran before. "
-        "<b>At h = 1</b>, both candidates beat the GARCH(1,1) baseline by large, "
-        "highly-significant margins under both RV proxies "
-        "(GARCHND tone: DM &asymp; +5.4, CW &asymp; +5.8, p &lt; 0.001; "
-        "GARCHND log_artg: DM &asymp; +4.0, CW &asymp; +4.5, p &lt; 0.001). "
-        "Clark&ndash;West &mdash; the appropriate test for the nested &gamma; = 0 null &mdash; "
-        "confirms that the news/regime term carries genuine predictive content "
-        "at the one-day horizon. <b>At h = 5</b> the picture splits: "
-        "GARCHND tone retains a significant edge (DM p &asymp; 0.034&ndash;0.038, CW p &asymp; 0.01), "
-        "whereas GARCHND log_artg is no longer significant under DM but is "
-        "borderline under CW (p &asymp; 0.05&ndash;0.06). <b>At h = 22</b> the news effect "
-        "decays: both candidates underperform the baseline (DM &lt; 0; significantly so "
-        "for log_artg, with one-sided Clark&ndash;West p &gt; 0.95 rejecting any predictive gain). "
-        "This is the signature of a short-lived information shock that is correctly "
-        "priced into next-day variance but adds noise once the iterated forecast horizon "
-        "exceeds the news half-life. The conclusion overturns the previous "
-        "&ldquo;no OOS value&rdquo; reading: the in-sample &gamma; carries real, "
-        "horizon-bounded forecasting power, especially when the news regressor is the "
-        "GDELT tone.",
+        "Verdict: a clean separation emerges across the nine augmented candidates. "
+        "<b>The simple symmetric and asymmetric news models are dominated by the "
+        "baseline at every horizon and under both RV proxies.</b> "
+        "GARCH-X (tone, log_artg) and GARCHAND (tone, log_artg) post strongly "
+        "negative DM and one-sided Clark&ndash;West p-values &gt; 0.99 at h = 1 and h = 5: "
+        "adding tone<sup>2</sup> or its asymmetric counterpart purely as a variance shifter "
+        "destroys forecast accuracy, with GARCHAND tone being the worst performer "
+        "(DM &asymp; &minus;12 at h = 1). "
+        "<b>The GARCHND κ = 30% specifications also lose to the baseline</b> &mdash; "
+        "the 30 %-annualised volatility threshold triggers d<sub>3</sub> too often, "
+        "so the &gamma;-term injects noise rather than information. "
+        "<b>Only the GARCHND κ = 50% pair adds OOS value</b>, and only in the news "
+        "regime they were designed for: <i>κ = 50% with log_art_growth</i> beats "
+        "the baseline at h = 1 and h = 5 with high significance under both proxies "
+        "(DM &asymp; +6.8–7.1 at h = 1; +3.3 at h = 5; CW p &lt; 0.001 at both horizons), "
+        "and is at worst neutral at h = 22 (CW p &asymp; 0.12). "
+        "<i>κ = 50% with tone</i> beats the baseline decisively at h = 1 "
+        "(DM &asymp; +4.1, CW p &lt; 0.001), is borderline at h = 5 (CW p &asymp; 0.04 "
+        "but DM not significant), and turns negative at h = 22. "
+        "<b>EGARCH-X</b> is roughly tied with the baseline at h = 1 and h = 5 "
+        "(insignificant DM, weakly positive CW) and posts a marginal positive CW "
+        "edge at h = 22 (p &asymp; 0.03), suggesting log-variance plus a small "
+        "leverage term captures something the squared-variance specifications miss "
+        "at the monthly horizon. Taken together, the picture is consistent with a "
+        "short-lived news shock that is informative only when the previous day was "
+        "already in a high-volatility regime &mdash; exactly the d<sub>3</sub> "
+        "switch the κ = 50% GARCHND was designed around &mdash; and is otherwise "
+        "noise.",
         styles["Verdict"],
     ))
 
@@ -699,15 +792,23 @@ def render_check3(story, styles):
     hdr = ["K", "LL", "&gamma;", "SE(&gamma;)", "t(&gamma;)", "converged"]
     cw = [2.0 * cm, 2.6 * cm, 2.2 * cm, 2.6 * cm, 2.6 * cm, 2.4 * cm]
 
-    story.append(Paragraph("x = tone  (CV = 0.412 — sensitive to K)", styles["SubSection"]))
+    story.append(Paragraph("x = tone  (CV = 0.342 — moderately sensitive to K)", styles["SubSection"]))
     story.append(_tbl([hdr] + STABILITY_TONE, cw))
     story.append(Spacer(1, 8))
 
-    story.append(Paragraph("x = log_art_growth  (CV = 0.119 — stable)", styles["SubSection"]))
+    story.append(Paragraph("x = log_art_growth  (CV = 0.295 — moderately sensitive to K)", styles["SubSection"]))
     story.append(_tbl([hdr] + STABILITY_ARTG, cw))
     story.append(Paragraph(
-        "Verdict: the tone specification is sensitive to the sigmoid shape; "
-        "log_art_growth is stable in sign and magnitude but not in t-ratio (t ranges from &minus;4.4 to &minus;370.8).",
+        "Verdict: &gamma;&#770; keeps its sign and roughly its magnitude across "
+        "smooth K &isin; {5, 10, 20, 50} for both specifications "
+        "(tone: &asymp; &minus;0.91 to &minus;1.10; log_artg: &asymp; &minus;1.00 to &minus;1.22), "
+        "with coefficients of variation in the 0.30 range &mdash; neither stable "
+        "(&lt; 0.2) nor unstable (&gt; 0.5). The hard-indicator fit, by contrast, "
+        "collapses to a degenerate Hessian (condition number 10<sup>9</sup>–10<sup>10</sup>, "
+        "SE &asymp; 10<sup>&minus;4</sup>) and yields the implausible t-ratios "
+        "in the thousands &mdash; a clear sign that the binary d<sub>3</sub> kills "
+        "identification. The smoothed version (K = 20, the default) is the right "
+        "estimator; the t-ratios it reports are the ones to trust.",
         styles["Verdict"],
     ))
 
@@ -725,16 +826,16 @@ def render_check4(story, styles):
     cw = [0.8 * cm, 3.0 * cm, 3.0 * cm, 1.8 * cm]
 
     story.append(Paragraph(
-        "x = tone: 110 triggered days (3.98%), 15 distinct episodes; "
-        "recommended block length &ge; 36 days",
+        "x = tone: 125 triggered days (4.52%), 17 distinct episodes; "
+        "recommended block length &ge; 37 days",
         styles["SubSection"],
     ))
     story.append(_tbl([hdr] + CLUSTERS_TONE, cw))
     story.append(Spacer(1, 8))
 
     story.append(Paragraph(
-        "x = log_art_growth: 129 triggered days (4.67%), 22 distinct episodes; "
-        "recommended block length &ge; 32 days",
+        "x = log_art_growth: 137 triggered days (4.95%), 21 distinct episodes; "
+        "recommended block length &ge; 37 days",
         styles["SubSection"],
     ))
     story.append(_tbl([hdr] + CLUSTERS_ARTG, cw))
@@ -759,11 +860,14 @@ def render_check5(story, styles):
     story.append(Paragraph("x = log_art_growth", styles["SubSection"]))
     story.append(_tbl([hdr] + HAC_ARTG, cw))
     story.append(Paragraph(
-        "Verdict: HAC and MBB corrections do NOT inflate the standard errors materially. "
-        "The t-ratios remain strongly significant (tone: around &minus;14; log_artg: around &minus;5.7). "
-        "This is explained by the iid nature of x<sup>2</sup><sub>t-1</sub> within the regime, "
-        "which absorbs serial correlation in the score. The conclusion from Checks 1&ndash;2 "
-        "(regime artefact, no OOS gain) stands unaffected.",
+        "Verdict: HAC and moving-block-bootstrap corrections leave the t-ratios "
+        "essentially unchanged from the iid sandwich (tone: t &asymp; &minus;7.6 to &minus;8.2 "
+        "across all block lengths; log_artg: t &asymp; &minus;6.1 to &minus;7.0). "
+        "If anything, the HAC and MBB SEs are slightly tighter than iid at moderate L, "
+        "because the news shocks deliver a partly mean-reverting score that under-weights "
+        "the long-run variance estimate. The in-sample significance of &gamma; in the "
+        "κ = 50% GARCHND specifications is robust to plausible serial-correlation corrections, "
+        "consistent with the favourable rolling-window OOS evidence from Check 1.",
         styles["Verdict"],
     ))
 
@@ -862,22 +966,27 @@ def main() -> None:
         styles["ReportTitle"],
     ))
     story.append(Paragraph(
-        "Six diagnostic checks applied to the GARCHND κ=50% Student-t models "
-        "(the best in-sample specifications). Checks 1–4 are from notebook 06; "
-        "Checks 5–6 from notebook 07. The picture that emerges is more nuanced "
-        "than the original static-OOS reading: the rolling-window forecast (Check 1, "
-        "813 origins with daily refit and two RV proxies) shows that both GARCHND "
-        "specifications add genuine one-day-ahead predictive content over GARCH(1,1) "
-        "&mdash; significant under both Diebold&ndash;Mariano and Clark&ndash;West &mdash; "
-        "with the tone-augmented model retaining a significant edge at h = 5. "
-        "The advantage disappears at h = 22, consistent with a short-lived news shock. "
-        "The remaining checks qualify the in-sample identification: the news term is "
-        "partly redundant with a regime intercept (Check 2), the t-ratio on &gamma; "
-        "is sensitive to the sigmoid sharpness (Check 3), the high-volatility regime "
-        "is concentrated in a handful of long episodes (Check 4), and a permissive "
-        "GDELT filter dominates the sentiment series (Check 6) &mdash; but the OOS "
-        "gain at short horizons survives all of these qualifications and reverses "
-        "the previous &ldquo;regime artefact&rdquo; verdict.",
+        "Six diagnostic checks. Checks 1–4 are from notebook 06; Checks 5–6 from "
+        "notebook 07. Check 1 was extended to a rolling-window scheme (813 origins, "
+        "daily refit on 1,260 days, both RV proxies, DM and Clark&ndash;West tests) and "
+        "applied to <b>all nine augmented candidates plus the GARCH(1,1) baseline</b>, "
+        "not only the GARCHND κ=50% pair. The headline result is sharper than the "
+        "earlier static-OOS reading: only the κ=50% GARCHND specifications add "
+        "OOS value &mdash; the log_artg version dominates at h=1 and h=5 under both "
+        "proxies (DM and CW p &lt; 0.001), the tone version at h=1 only, and both "
+        "fade or invert at h=22. The other augmented models (simple GARCH-X, GARCHAND, "
+        "κ=30% GARCHND) lose to the baseline at every horizon, and EGARCH-X is "
+        "roughly tied with the baseline. Checks 2–6 then characterise the in-sample "
+        "&gamma; in the surviving κ=50% pair: it is partly redundant with a regime "
+        "intercept (Check 2), moderately sensitive to the sigmoid sharpness (Check 3, "
+        "CV &asymp; 0.3 across smooth K), driven by ~17–21 high-vol episodes "
+        "concentrated in 2020-Q1, 2021-Q1 and 2025-Q4 (Check 4), but robust to HAC "
+        "and moving-block-bootstrap corrections (Check 5). Check 6 documents that "
+        "the GDELT sentiment series is built from a permissive filter dominated by "
+        "the &lsquo;cerium&rsquo; chemistry token, which puts an obvious noise ceiling on the "
+        "magnitude of any sentiment effect &mdash; consistent with the conclusion that "
+        "the OOS predictive content sits with the volatility-regime switch, not with "
+        "raw news intensity.",
         styles["Body"],
     ))
     story.append(Spacer(1, 6))
