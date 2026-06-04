@@ -2,29 +2,27 @@ Sample after alignment: T = 2765 obs (2015-04-02 -> 2026-03-31)
 
 Per-parameter significance (|t| > 1.645 -> 10%, |t| > 1.96 -> 5%, |t| > 2.576 -> 1%):
                 estimate  std_err   t_ratio  p_value  significant_10pct  significant_5pct  significant_1pct
-mu               -0.0206   0.0365   -0.5642   0.5726              False             False             False
-omega             0.0244   0.0089    2.7469   0.0060               True              True              True
-alpha             0.1600   0.0245    6.5395   0.0000               True              True              True
-xi               -0.0160   0.0106   -1.5081   0.1315              False             False             False
-beta              0.9825   0.0058  168.0003   0.0000               True              True              True
-gamma_tone        0.0084   0.0054    1.5553   0.1199              False             False             False
-gamma_log_artg   -0.0605   0.0585   -1.0354   0.3005              False             False             False
-nu               10.9830   2.2009    4.9901   0.0000               True              True              True
+omega             0.0242   0.0088    2.7351   0.0062               True              True              True
+alpha             0.1596   0.0244    6.5352   0.0000               True              True              True
+xi               -0.0151   0.0104   -1.4515   0.1466              False             False             False
+beta              0.9826   0.0058  168.2651   0.0000               True              True              True
+gamma_tone        0.0084   0.0054    1.5501   0.1211              False             False             False
+gamma_log_artg   -0.0599   0.0584   -1.0270   0.3044              False             False             False
+nu               10.9677   2.1917    5.0041   0.0000               True              True              True
 
-Log-likelihood : -5952.0206
-AIC            :  11920.0411
-BIC            :  11967.4395
+Log-likelihood : -5952.1628
+AIC            :  11918.3257
+BIC            :  11959.7992
 
-beta = 0.9825   (stationary (|beta|<1))
-Half-life of a log-variance shock: 39.4 trading days
-nu   = 10.9830   (Student-t dof; lower -> heavier tails. Note: the t-ratio for nu tests H0: nu = 0, which is not the meaningful null. To test Gaussian vs Student-t use an LR test against the Gaussian EGARCH-X.)
+beta = 0.9826   (stationary (|beta|<1))
+Half-life of a log-variance shock: 39.5 trading days
+nu   = 10.9677   (Student-t dof; lower -> heavier tails. Note: the t-ratio for nu tests H0: nu = 0, which is not the meaningful null. To test Gaussian vs Student-t use an LR test against the Gaussian EGARCH-X.)
 
 Verdict:
-  mu               t = -0.56   p = 0.5726   -> not significant
-  omega            t = +2.75   p = 0.0060   -> SIGNIFICANT at 1% (and 5%, 10%)
+  omega            t = +2.74   p = 0.0062   -> SIGNIFICANT at 1% (and 5%, 10%)
   alpha            t = +6.54   p = 0.0000   -> SIGNIFICANT at 1% (and 5%, 10%)
-  xi               t = -1.51   p = 0.1315   -> not significant
-  beta             t = +168.00   p = 0.0000   -> SIGNIFICANT at 1% (and 5%, 10%)
-  gamma_tone       t = +1.56   p = 0.1199   -> not significant
-  gamma_log_artg   t = -1.04   p = 0.3005   -> not significant
-  nu               t = +4.99   p = 0.0000   -> SIGNIFICANT at 1% (and 5%, 10%)
+  xi               t = -1.45   p = 0.1466   -> not significant
+  beta             t = +168.27   p = 0.0000   -> SIGNIFICANT at 1% (and 5%, 10%)
+  gamma_tone       t = +1.55   p = 0.1211   -> not significant
+  gamma_log_artg   t = -1.03   p = 0.3044   -> not significant
+  nu               t = +5.00   p = 0.0000   -> SIGNIFICANT at 1% (and 5%, 10%)
