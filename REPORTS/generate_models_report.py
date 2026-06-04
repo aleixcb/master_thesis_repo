@@ -4,7 +4,7 @@ PDF report generator for the GARCH/EGARCH volatility models.
 Reads the results captured in the REPORTS folder and builds a structured
 PDF with one section per model. Each section contains the variance
 expression, a short motivation, and the main results (Gaussian first,
-Student-t second). A final part covers the six robustness checks from
+Student-t second). A final part covers the seven robustness checks from
 notebooks 06 and 07.
 
 Usage:
@@ -329,23 +329,23 @@ OOS_DM_CW = [
 # Check 2 — Placebo (notebook 06, cell 8)
 PLACEBO_TONE = [
     # [Spec, LL, AIC, BIC, gamma, se(gamma), t(gamma)]
-    ["original",           "-5951.97", "11913.94", "11943.57", "-0.8262", "0.0602", "-13.72"],
+    ["original",           "-5950.47", "11910.94", "11940.56", "-1.0966", "0.1445",  "-7.59"],
     ["regime-only (γ·d3)", "-5950.18", "11910.37", "11939.99", "-1.1218", "0.0172", "-65.10"],
-    ["placebo seed=2026",  "-5955.76", "11921.52", "11951.15", "-0.1501", "0.0283",  "-5.31"],
-    ["placebo seed=2027",  "-5949.09", "11908.18", "11937.80", "-0.7548", "0.0233", "-32.41"],
-    ["placebo seed=2028",  "-5952.23", "11914.46", "11944.08", "-0.3636", "0.0213", "-17.03"],
-    ["placebo seed=2029",  "-5950.81", "11911.63", "11941.25", "-0.8354", "0.0175", "-47.80"],
-    ["placebo seed=2030",  "-5952.38", "11914.75", "11944.38", "-0.3935", "0.0610",  "-6.45"],
+    ["placebo seed=2026",  "-5952.05", "11914.09", "11943.72", "-0.6727", "0.0689",  "-9.76"],
+    ["placebo seed=2027",  "-5953.47", "11916.95", "11946.57", "-0.6057", "0.0498", "-12.17"],
+    ["placebo seed=2028",  "-5950.12", "11910.23", "11939.86", "-0.7363", "0.0256", "-28.73"],
+    ["placebo seed=2029",  "-5954.64", "11919.28", "11948.90", "-0.4831", "0.1141",  "-4.23"],
+    ["placebo seed=2030",  "-5951.64", "11913.29", "11942.91", "-0.8069", "0.2155",  "-3.75"],
 ]
 
 PLACEBO_ARTG = [
-    ["original",           "-5951.25", "11912.49", "11942.12", "-1.4116", "0.2184",  "-6.46"],
+    ["original",           "-5954.03", "11918.06", "11947.68", "-0.9972", "0.1635",  "-6.10"],
     ["regime-only (γ·d3)", "-5950.18", "11910.37", "11939.99", "-1.1218", "0.0172", "-65.10"],
-    ["placebo seed=2026",  "-5955.15", "11920.29", "11949.92", "-0.8036", "0.1258",  "-6.39"],
-    ["placebo seed=2027",  "-5955.34", "11920.67", "11950.30", "-0.2475", "0.1213",  "-2.04"],
-    ["placebo seed=2028",  "-5955.10", "11920.19", "11949.82", "-0.3646", "0.1288",  "-2.83"],
-    ["placebo seed=2029",  "-5949.72", "11909.44", "11939.06", "-1.0843", "0.0814", "-13.32"],
-    ["placebo seed=2030",  "-5954.52", "11919.04", "11948.66", "-0.4900", "0.0936",  "-5.24"],
+    ["placebo seed=2026",  "-5956.31", "11922.63", "11952.25", "-0.0293", "0.3521",  "-0.08"],
+    ["placebo seed=2027",  "-5954.29", "11918.58", "11948.21", "-0.5808", "0.1936",  "-3.00"],
+    ["placebo seed=2028",  "-5955.55", "11921.10", "11950.73", "-0.3951", "0.6144",  "-0.64"],
+    ["placebo seed=2029",  "-5949.77", "11909.54", "11939.17", "-1.6377", "0.1975",  "-8.29"],
+    ["placebo seed=2030",  "-5956.19", "11922.38", "11952.01", "-0.2157", "0.1938",  "-1.11"],
 ]
 
 # Check 3 — SE stability across sigmoid sharpness K (notebook 06, cell 10)
@@ -393,7 +393,35 @@ CLUSTERS_ARTG = [
     ["10","2021-01-07", "2021-01-12",  "4"],
 ]
 
-# Check 5 — HAC/MBB SEs (notebook 07, cell 3)
+# Check 5 — Lead-lag cross-correlation (notebook 06, cell 17)
+# ρ(k) = Corr(x_{t+k}, ln RV_t); k < 0 ⇒ news LEADS realised volatility.
+# Prewhitened (AR(10)) columns (_pw) are the valid ones; band = ±1.96/√N ≈ ±0.037.
+# [k, tone_raw, tone_pw, |tone|_raw, |tone|_pw, log_artg_raw, log_artg_pw]
+LEADLAG = [
+    ["−10", "0.025",  "0.002",  "0.008",  "0.013",  "0.001",  "0.010"],
+    ["−9",  "0.016",  "−0.012", "−0.006", "−0.003", "0.042",  "0.024"],
+    ["−8",  "0.045",  "0.028",  "−0.025", "−0.024", "−0.029", "−0.009"],
+    ["−7",  "0.016",  "−0.019", "0.014",  "0.022",  "−0.003", "0.008"],
+    ["−6",  "0.058",  "0.043",  "−0.007", "−0.007", "0.003",  "0.020"],
+    ["−5",  "0.015",  "−0.023", "0.002",  "0.002",  "0.016",  "0.027"],
+    ["−4",  "0.051",  "0.036",  "0.002",  "0.006",  "0.001",  "0.020"],
+    ["−3",  "0.024",  "0.007",  "0.023",  "0.032",  "0.035",  "0.033"],
+    ["−2",  "−0.004", "−0.029", "−0.040", "−0.047", "−0.022", "0.005"],
+    ["−1",  "−0.007", "−0.028", "−0.002", "0.001",  "−0.014", "−0.009"],
+    ["0",   "0.009",  "−0.006", "0.011",  "0.018",  "−0.014", "−0.006"],
+    ["1",   "−0.006", "−0.032", "0.001",  "0.002",  "0.029",  "0.016"],
+    ["2",   "0.023",  "0.005",  "0.017",  "0.018",  "0.005",  "0.003"],
+    ["3",   "0.035",  "0.008",  "0.034",  "0.041",  "−0.043", "−0.012"],
+    ["4",   "0.062",  "0.046",  "−0.004", "−0.005", "0.031",  "0.020"],
+    ["5",   "0.054",  "0.035",  "−0.042", "−0.045", "0.002",  "0.016"],
+    ["6",   "0.023",  "−0.007", "−0.034", "−0.033", "0.017",  "0.012"],
+    ["7",   "0.035",  "0.020",  "−0.018", "−0.012", "0.008",  "0.001"],
+    ["8",   "0.008",  "−0.019", "0.001",  "−0.001", "−0.018", "−0.018"],
+    ["9",   "0.025",  "0.009",  "−0.001", "−0.003", "−0.013", "−0.034"],
+    ["10",  "0.015",  "−0.003", "0.013",  "0.020",  "−0.014", "−0.034"],
+]
+
+# Check 6 — HAC/MBB SEs (notebook 07, cell 3)
 HAC_TONE = [
     # [Method, gamma, SE(gamma), t(gamma)]
     ["iid sandwich", "-1.0966", "0.1445", "-7.59"],
@@ -419,7 +447,7 @@ HAC_ARTG = [
     ["MBB L=100",    "-0.9972", "0.1489", "-6.69"],
 ]
 
-# Check 6 — GDELT coverage (notebook 07, cells 5–6)
+# Check 7 — GDELT coverage (notebook 07, cells 5–6)
 GDELT_CONCEPTS = [
     # [Concept, N articles, share]
     ["has_cerium",        "186,346", "59.34%"],
@@ -757,14 +785,14 @@ def render_check2(story, styles):
         styles["Body"],
     ))
 
-    hdr = ["Specification", "LL", "AIC", "BIC", "&gamma;", "SE(&gamma;)", "t(&gamma;)"]
+    hdr = ["Specification", "LL", "AIC", "BIC", "γ", "SE(γ)", "t(γ)"]
     cw = [4.2 * cm, 2.2 * cm, 2.4 * cm, 2.4 * cm, 1.8 * cm, 2.0 * cm, 2.0 * cm]
 
     story.append(Paragraph("x = tone", styles["SubSection"]))
     story.append(_tbl([hdr] + PLACEBO_TONE, cw))
     story.append(Paragraph(
         "Verdict: original does NOT beat the regime-only / placebo baselines "
-        "(&Delta;LL vs regime-only = &minus;1.79; placebo LL max = &minus;5949.09 vs original &minus;5951.97). "
+        "(&Delta;LL vs regime-only = &minus;0.29; placebo LL max = &minus;5950.12 vs original &minus;5950.47). "
         "News effect is likely a regime artefact.",
         styles["Verdict"],
     ))
@@ -774,7 +802,7 @@ def render_check2(story, styles):
     story.append(_tbl([hdr] + PLACEBO_ARTG, cw))
     story.append(Paragraph(
         "Verdict: original does NOT beat the regime-only / placebo baselines "
-        "(&Delta;LL vs regime-only = &minus;1.06; placebo LL max = &minus;5949.72 vs original &minus;5951.25). "
+        "(&Delta;LL vs regime-only = &minus;3.85; placebo LL max = &minus;5949.77 vs original &minus;5954.03). "
         "News effect is likely a regime artefact.",
         styles["Verdict"],
     ))
@@ -789,7 +817,7 @@ def render_check3(story, styles):
         styles["Body"],
     ))
 
-    hdr = ["K", "LL", "&gamma;", "SE(&gamma;)", "t(&gamma;)", "converged"]
+    hdr = ["K", "LL", "γ", "SE(γ)", "t(γ)", "converged"]
     cw = [2.0 * cm, 2.6 * cm, 2.2 * cm, 2.6 * cm, 2.6 * cm, 2.4 * cm]
 
     story.append(Paragraph("x = tone  (CV = 0.342 — moderately sensitive to K)", styles["SubSection"]))
@@ -799,7 +827,7 @@ def render_check3(story, styles):
     story.append(Paragraph("x = log_art_growth  (CV = 0.295 — moderately sensitive to K)", styles["SubSection"]))
     story.append(_tbl([hdr] + STABILITY_ARTG, cw))
     story.append(Paragraph(
-        "Verdict: &gamma;&#770; keeps its sign and roughly its magnitude across "
+        "Verdict: &gamma; keeps its sign and roughly its magnitude across "
         "smooth K &isin; {5, 10, 20, 50} for both specifications "
         "(tone: &asymp; &minus;0.91 to &minus;1.10; log_artg: &asymp; &minus;1.00 to &minus;1.22), "
         "with coefficients of variation in the 0.30 range &mdash; neither stable "
@@ -842,7 +870,51 @@ def render_check4(story, styles):
 
 
 def render_check5(story, styles):
-    story.append(Paragraph("Check 5 — HAC and Moving-Block-Bootstrap SEs on &gamma; (Notebook 07)", styles["ModelTitle"]))
+    story.append(Paragraph(
+        "Check 5 — Lead-lag cross-correlation: news vs realised volatility (Notebook 06)",
+        styles["ModelTitle"],
+    ))
+    story.append(Paragraph(
+        "Model-free test of the maintained hypothesis behind the whole thesis: does news "
+        "actually <i>lead</i> realised volatility, or only move with it contemporaneously? "
+        "We report the cross-correlation &rho;(k) = Corr(x<sub>t+k</sub>, ln RV<sub>t</sub>) for "
+        "k &isin; [&minus;10, +10], where <b>k &lt; 0 means news LEADS RV</b> (forward-looking "
+        "information) and k &gt; 0 means RV leads news (reactive coverage). Because both series "
+        "are autocorrelated, the raw correlations are biased toward significance; the valid test "
+        "uses the <b>prewhitened</b> columns (each series filtered by an AR(10) before correlating), "
+        "with the white-noise band ±1.96/&radic;N &asymp; ±0.037. Three regressors are screened: "
+        "signed <b>tone</b>, news intensity <b>|tone|</b>, and <b>log_art_growth</b>.",
+        styles["Body"],
+    ))
+
+    hdr = ["k", "tone (raw)", "tone (pw)", "|tone| (raw)", "|tone| (pw)",
+           "log_artg (raw)", "log_artg (pw)"]
+    cw = [1.0 * cm, 2.4 * cm, 2.4 * cm, 2.4 * cm, 2.4 * cm, 2.7 * cm, 2.7 * cm]
+    story.append(Paragraph(
+        "Cross-correlations &rho;(k) (k &lt; 0 ⇒ news leads RV; prewhitened columns are the valid ones)",
+        styles["SubSection"],
+    ))
+    story.append(_tbl([hdr] + LEADLAG, cw))
+
+    story.append(Paragraph(
+        "Verdict: under the valid prewhitened band (±0.037), the maintained \"news leads "
+        "volatility\" hypothesis survives only for <b>signed tone</b>, and only weakly: its "
+        "strongest lead is at k = &minus;6 (&rho;<sub>pw</sub> = +0.043, just above the band), "
+        "with a single significant lead lag and &rho;<sub>pw</sub>(&minus;1) = &minus;0.028 "
+        "(below the band). This is consistent with a small, slow forward-looking component in "
+        "directional sentiment. <b>News intensity |tone| shows no clean lead</b> (its only "
+        "above-band lead, k = &minus;2, is negative, and the significant correlations sit on the "
+        "lag side k = +3, +5 — i.e. RV driving coverage, not the reverse). <b>log_art_growth has "
+        "no significant lead or lag lags at all</b> once prewhitened. Overall the lead-lag evidence "
+        "for a genuine news&rarr;volatility channel is marginal and confined to signed tone — "
+        "coherent with the in-sample and OOS results, where the only predictive content came from "
+        "the volatility-regime switch rather than raw news flow.",
+        styles["Verdict"],
+    ))
+
+
+def render_check6(story, styles):
+    story.append(Paragraph("Check 6 — HAC and Moving-Block-Bootstrap SEs on &gamma; (Notebook 07)", styles["ModelTitle"]))
     story.append(Paragraph(
         "Sandwich (HAC) and moving-block-bootstrap (MBB, B=2000) standard errors on &gamma; "
         "for both GARCHND κ=50% specifications, at block lengths L &isin; {25, 50, 75, 100} days "
@@ -850,7 +922,7 @@ def render_check5(story, styles):
         styles["Body"],
     ))
 
-    hdr = ["SE method", "&gamma;", "SE(&gamma;)", "t(&gamma;)"]
+    hdr = ["SE method", "γ", "SE(γ)", "t(γ)"]
     cw = [3.2 * cm, 2.4 * cm, 2.8 * cm, 2.8 * cm]
 
     story.append(Paragraph("x = tone", styles["SubSection"]))
@@ -872,8 +944,8 @@ def render_check5(story, styles):
     ))
 
 
-def render_check6(story, styles):
-    story.append(Paragraph("Check 6 — GDELT coverage of REMX / rare earths (Notebook 07)", styles["ModelTitle"]))
+def render_check7(story, styles):
+    story.append(Paragraph("Check 7 — GDELT coverage of REMX / rare earths (Notebook 07)", styles["ModelTitle"]))
     story.append(Paragraph(
         "The GDELT article cache (314,048 articles, 2015-04-01 to 2026-04-01) was built with a "
         "permissive 19-concept filter (any single match passes). This check quantifies how many "
@@ -926,7 +998,7 @@ def main() -> None:
         "demonstrate, and the main estimation results (Gaussian first, "
         "Student-t second). The <i>Sig.</i> column summarises significance: "
         "*** = 1%, ** = 5%, * = 10%. "
-        "A final part covers the six robustness checks from notebooks "
+        "A final part covers the seven robustness checks from notebooks "
         "<b>06-robustness-checks</b> and <b>07-extra-robustness-checks</b>.",
         styles["Body"],
     ))
@@ -966,7 +1038,7 @@ def main() -> None:
         styles["ReportTitle"],
     ))
     story.append(Paragraph(
-        "Six diagnostic checks. Checks 1–4 are from notebook 06; Checks 5–6 from "
+        "Seven diagnostic checks. Checks 1–5 are from notebook 06; Checks 6–7 from "
         "notebook 07. Check 1 was extended to a rolling-window scheme (813 origins, "
         "daily refit on 1,260 days, both RV proxies, DM and Clark&ndash;West tests) and "
         "applied to <b>all nine augmented candidates plus the GARCH(1,1) baseline</b>, "
@@ -976,12 +1048,15 @@ def main() -> None:
         "proxies (DM and CW p &lt; 0.001), the tone version at h=1 only, and both "
         "fade or invert at h=22. The other augmented models (simple GARCH-X, GARCHAND, "
         "κ=30% GARCHND) lose to the baseline at every horizon, and EGARCH-X is "
-        "roughly tied with the baseline. Checks 2–6 then characterise the in-sample "
+        "roughly tied with the baseline. Checks 2–4 and 6 then characterise the in-sample "
         "&gamma; in the surviving κ=50% pair: it is partly redundant with a regime "
         "intercept (Check 2), moderately sensitive to the sigmoid sharpness (Check 3, "
         "CV &asymp; 0.3 across smooth K), driven by ~17–21 high-vol episodes "
         "concentrated in 2020-Q1, 2021-Q1 and 2025-Q4 (Check 4), but robust to HAC "
-        "and moving-block-bootstrap corrections (Check 5). Check 6 documents that "
+        "and moving-block-bootstrap corrections (Check 6). A model-free lead-lag "
+        "cross-correlation (Check 5) finds at most a marginal news&rarr;volatility lead "
+        "for signed tone (prewhitened &rho; = +0.043 at k = &minus;6) and none for news "
+        "intensity or article growth. Check 7 documents that "
         "the GDELT sentiment series is built from a permissive filter dominated by "
         "the &lsquo;cerium&rsquo; chemistry token, which puts an obvious noise ceiling on the "
         "magnitude of any sentiment effect &mdash; consistent with the conclusion that "
@@ -1002,6 +1077,8 @@ def main() -> None:
     render_check5(story, styles)
     story.append(PageBreak())
     render_check6(story, styles)
+    story.append(PageBreak())
+    render_check7(story, styles)
 
     doc.build(story)
     print(f"PDF generated: {OUT_PDF}")

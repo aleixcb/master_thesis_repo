@@ -1,5 +1,5 @@
 ==============================================================================
-REMX volatility-model estimation report  (generated 2026-06-01 09:18)
+REMX volatility-model estimation report  (generated 2026-06-04 15:44)
 ==============================================================================
 
 ------------------------------------------------------------------------------
@@ -16,8 +16,8 @@ Vol Model:                      GARCH   Log-Likelihood:               -5982.31
 Distribution:                  Normal   AIC:                           11970.6
 Method:            Maximum Likelihood   BIC:                           11988.4
                                         No. Observations:                 2765
-Date:                Mon, Jun 01 2026   Df Residuals:                     2765
-Time:                        09:18:22   Df Model:                            0
+Date:                Thu, Jun 04 2026   Df Residuals:                     2765
+Time:                        15:44:14   Df Model:                            0
                              Volatility Model                             
 ==========================================================================
                  coef    std err          t      P>|t|    95.0% Conf. Int.
@@ -258,8 +258,8 @@ Vol Model:                            GARCH   Log-Likelihood:               -595
 Distribution:      Standardized Student's t   AIC:                           11920.5
 Method:                  Maximum Likelihood   BIC:                           11944.2
                                               No. Observations:                 2765
-Date:                      Mon, Jun 01 2026   Df Residuals:                     2765
-Time:                              09:18:31   Df Model:                            0
+Date:                      Thu, Jun 04 2026   Df Residuals:                     2765
+Time:                              15:44:23   Df Model:                            0
                              Volatility Model                             
 ==========================================================================
                  coef    std err          t      P>|t|    95.0% Conf. Int.
