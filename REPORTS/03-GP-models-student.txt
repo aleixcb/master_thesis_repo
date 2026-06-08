@@ -9,8 +9,8 @@ Vol Model:                            GARCH   Log-Likelihood:               -595
 Distribution:      Standardized Student's t   AIC:                           11920.5
 Method:                  Maximum Likelihood   BIC:                           11944.2
                                               No. Observations:                 2765
-Date:                      Thu, Jun 04 2026   Df Residuals:                     2765
-Time:                              15:44:23   Df Model:                            0
+Date:                      Mon, Jun 08 2026   Df Residuals:                     2765
+Time:                              02:22:06   Df Model:                            0
                              Volatility Model                             
 ==========================================================================
                  coef    std err          t      P>|t|    95.0% Conf. Int.
@@ -174,8 +174,8 @@ Sample: T = 2765 obs (2015-04-02 -> 2026-03-31)  kappa = 3.5714
 Per-parameter significance (|t| > 1.645 -> 10%, |t| > 1.96 -> 5%, |t| > 2.576 -> 1%):
        estimate  std_err  t_ratio  p_value  significant_10pct  significant_5pct  significant_1pct
 omega    0.0919   0.0304   3.0267   0.0025               True              True              True
-alpha    0.0852   0.0146   5.8442   0.0000               True              True              True
-beta     0.8977   0.0181  49.6099   0.0000               True              True              True
+alpha    0.0852   0.0146   5.8441   0.0000               True              True              True
+beta     0.8977   0.0181  49.6098   0.0000               True              True              True
 gamma    0.0114   0.0215   0.5333   0.5938              False             False             False
 nu      11.1736   2.3005   4.8571   0.0000               True              True              True
 
@@ -198,25 +198,25 @@ Sample: T = 2765 obs (2015-04-02 -> 2026-03-31)  kappa = 9.9206
 
 Per-parameter significance (|t| > 1.645 -> 10%, |t| > 1.96 -> 5%, |t| > 2.576 -> 1%):
        estimate  std_err  t_ratio  p_value  significant_10pct  significant_5pct  significant_1pct
-omega    0.0421   0.0191   2.2089   0.0272               True              True             False
-alpha    0.0614   0.0049  12.5824   0.0000               True              True              True
-beta     0.9331   0.0097  96.3702   0.0000               True              True              True
-gamma   -0.8868   0.0679 -13.0521   0.0000               True              True              True
-nu      11.9034   2.4404   4.8777   0.0000               True              True              True
+omega    0.0455   0.0233   1.9489   0.0513               True             False             False
+alpha    0.0804   0.0102   7.9052   0.0000               True              True              True
+beta     0.9179   0.0141  65.2971   0.0000               True              True              True
+gamma   -1.0966   0.1445  -7.5900   0.0000               True              True              True
+nu      11.8332   2.5380   4.6623   0.0000               True              True              True
 
-Log-likelihood : -5951.4249
-AIC            :  11912.8498
-BIC            :  11942.4738
-alpha + beta   :  0.9944   (stationary (<1))
-d3 active in-sample (sigma^2_{t-1} >= kappa): 0.046
-Estimated degrees of freedom: nu_hat = 11.903
+Log-likelihood : -5950.4692
+AIC            :  11910.9383
+BIC            :  11940.5623
+alpha + beta   :  0.9984   (stationary (<1))
+d3 active in-sample (sigma^2_{t-1} >= kappa): 0.057
+Estimated degrees of freedom: nu_hat = 11.833
 
 Verdict:
-  omega         t = +2.21   p = 0.0272   -> SIGNIFICANT at 5% (and 10%) only
-  alpha         t = +12.58   p = 0.0000   -> SIGNIFICANT at 1% (and 5%, 10%)
-  beta          t = +96.37   p = 0.0000   -> SIGNIFICANT at 1% (and 5%, 10%)
-  gamma         t = -13.05   p = 0.0000   -> SIGNIFICANT at 1% (and 5%, 10%)
-  nu            t = +4.88   p = 0.0000   -> SIGNIFICANT at 1% (and 5%, 10%)
+  omega         t = +1.95   p = 0.0513   -> SIGNIFICANT at 10% only
+  alpha         t = +7.91   p = 0.0000   -> SIGNIFICANT at 1% (and 5%, 10%)
+  beta          t = +65.30   p = 0.0000   -> SIGNIFICANT at 1% (and 5%, 10%)
+  gamma         t = -7.59   p = 0.0000   -> SIGNIFICANT at 1% (and 5%, 10%)
+  nu            t = +4.66   p = 0.0000   -> SIGNIFICANT at 1% (and 5%, 10%)
 
 ---- GARCHND  x = log_art_growth   kappa = 30% annual ----
 Sample: T = 2765 obs (2015-04-02 -> 2026-03-31)  kappa = 3.5714
@@ -225,7 +225,7 @@ Per-parameter significance (|t| > 1.645 -> 10%, |t| > 1.96 -> 5%, |t| > 2.576 ->
        estimate  std_err  t_ratio  p_value  significant_10pct  significant_5pct  significant_1pct
 omega    0.0999   0.0314   3.1761   0.0015               True              True              True
 alpha    0.0845   0.0140   6.0252   0.0000               True              True              True
-beta     0.8940   0.0170  52.7059   0.0000               True              True              True
+beta     0.8940   0.0170  52.7057   0.0000               True              True              True
 gamma    0.0958   0.0617   1.5524   0.1206              False             False             False
 nu      11.1160   2.2781   4.8796   0.0000               True              True              True
 
@@ -248,24 +248,24 @@ Sample: T = 2765 obs (2015-04-02 -> 2026-03-31)  kappa = 9.9206
 
 Per-parameter significance (|t| > 1.645 -> 10%, |t| > 1.96 -> 5%, |t| > 2.576 -> 1%):
        estimate  std_err  t_ratio  p_value  significant_10pct  significant_5pct  significant_1pct
-omega    0.0605   0.0346   1.7519   0.0798               True             False             False
-alpha    0.0794   0.0113   7.0419   0.0000               True              True              True
-beta     0.9135   0.0191  47.7192   0.0000               True              True              True
-gamma   -1.1900   0.2009  -5.9233   0.0000               True              True              True
-nu      11.3988   2.3566   4.8371   0.0000               True              True              True
+omega    0.0608   0.0299   2.0364   0.0417               True              True             False
+alpha    0.0792   0.0176   4.5074   0.0000               True              True              True
+beta     0.9135   0.0206  44.3973   0.0000               True              True              True
+gamma   -0.9972   0.1635  -6.1003   0.0000               True              True              True
+nu      11.3219   2.3442   4.8298   0.0000               True              True              True
 
-Log-likelihood : -5953.9383
-AIC            :  11917.8766
-BIC            :  11947.5006
-alpha + beta   :  0.9928   (stationary (<1))
-d3 active in-sample (sigma^2_{t-1} >= kappa): 0.060
-Estimated degrees of freedom: nu_hat = 11.399
+Log-likelihood : -5954.0285
+AIC            :  11918.0570
+BIC            :  11947.6809
+alpha + beta   :  0.9926   (stationary (<1))
+d3 active in-sample (sigma^2_{t-1} >= kappa): 0.063
+Estimated degrees of freedom: nu_hat = 11.322
 
 Verdict:
-  omega         t = +1.75   p = 0.0798   -> SIGNIFICANT at 10% only
-  alpha         t = +7.04   p = 0.0000   -> SIGNIFICANT at 1% (and 5%, 10%)
-  beta          t = +47.72   p = 0.0000   -> SIGNIFICANT at 1% (and 5%, 10%)
-  gamma         t = -5.92   p = 0.0000   -> SIGNIFICANT at 1% (and 5%, 10%)
-  nu            t = +4.84   p = 0.0000   -> SIGNIFICANT at 1% (and 5%, 10%)
+  omega         t = +2.04   p = 0.0417   -> SIGNIFICANT at 5% (and 10%) only
+  alpha         t = +4.51   p = 0.0000   -> SIGNIFICANT at 1% (and 5%, 10%)
+  beta          t = +44.40   p = 0.0000   -> SIGNIFICANT at 1% (and 5%, 10%)
+  gamma         t = -6.10   p = 0.0000   -> SIGNIFICANT at 1% (and 5%, 10%)
+  nu            t = +4.83   p = 0.0000   -> SIGNIFICANT at 1% (and 5%, 10%)
 
 
